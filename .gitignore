@@ -2,4 +2,4 @@
 Gemfile.lock
 *.log
 *.out
-*T.aux
+*.aux
