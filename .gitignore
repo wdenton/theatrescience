@@ -3,3 +3,4 @@ Gemfile.lock
 *.log
 *.out
 *.aux
+web/.jekyll-cache

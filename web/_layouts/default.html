@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="{{ page.description }}" />
+  {% if page.title %}
+  <title>{{page.title}} | {{ site.name }}</title>
+  {% else %}
+  <title>{{ site.name }}</title>
+  {% endif %}
+
+  <link rel="stylesheet" type="text/css" href="/css/theatrescience.css" />
+
+</head>
+
+<body>
+
+{{ content }}
+
+</body>
+</html>

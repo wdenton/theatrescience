@@ -1,0 +1,11 @@
+name: Theatre Science
+description:
+url: https://theatrescience.org/
+
+timezone: America/Toronto
+encoding: UTF-8
+
+destination: /var/www/theatrescience.org/
+
+gems:
+  - jekyll-sitemap
