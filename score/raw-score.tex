@@ -1,0 +1,422 @@
+\documentclass[17pt]{extarticle}
+
+\title{Theatre Science}
+\author{Williamson and Denton}
+\date{February 2020}
+
+\usepackage[margin=4cm]{geometry}
+
+\usepackage{extsizes}
+
+% \usepackage{pifont}
+
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\microtypecontext{spacing=nonfrench}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{xcolor}
+
+\usepackage{amssymb}
+
+\usepackage{fancybox}
+\usepackage{dashbox}
+
+\usepackage{marginnote}
+\newcommand{\mysidenote}[1]{\marginnote{\raggedrightmarginnote \footnotesize #1}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{Theatre Science}
+
+% Nice font
+\usepackage[osf]{Baskervaldx}
+
+% Use space between paragraphs, with no indent.
+\usepackage{parskip}
+% No paragraph indent.
+% \setlength{\parskip}{\baselineskip}%
+% \setlength{\parindent}{0pt}%
+
+\usepackage{ifthen}
+% \providecommand\speaker{sone}
+% \ifthenelse{ \equal{\blackandwhite}{true} }{
+% % "black and white" mode; do something..
+% }{
+% % "color" mode; do something different..
+% }
+
+\newcommand{\musician}[1]{\ifthenelse{ \equal{\speaker}{musician} }{\textbf{MUSICIAN: #1}}{PIANIST: #1}}
+\newcommand{\primary}[1]{\ifthenelse{ \equal{\speaker}{primary} }{\textbf{PRIMARY: #1}}{PRIMARY: #1}}
+\newcommand{\secoone}[1]{\ifthenelse{ \equal{\speaker}{secoone} }{\textbf{SECONDARY 1: #1}}{SECONDARY 1: #1}}
+\newcommand{\secotwo}[1]{\ifthenelse{ \equal{\speaker}{secotwo} }{\textbf{SECONDARY 2: #1}}{SECONDARY 2: #1}}
+\newcommand{\secothr}[1]{\ifthenelse{ \equal{\speaker}{secothr} }{\textbf{SECONDARY 3: #1}}{SECONDARY 3: #1}}
+\newcommand{\tertone}[1]{\ifthenelse{ \equal{\speaker}{tertone} }{\textbf{TERTIARY 1: #1}}{TERTIARY 1: #1}}
+\newcommand{\terttwo}[1]{\ifthenelse{ \equal{\speaker}{terttwo} }{\textbf{TERTIARY 1: #1}}{TERTIARY 2: #1}}
+\newcommand{\tertthr}[1]{\ifthenelse{ \equal{\speaker}{tertthr} }{\textbf{TERTIARY 1: #1}}{TERTIARY 3: #1}}
+
+% Box formatting, so they have nice lines and are well padded
+\setlength{\fboxsep}{1em}
+\setlength{\fboxrule}{2pt}
+
+% tsdirectionforall = Direction for All
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+
+% tstechnical = Technical direction
+\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{\textwidth}{TECH: \textit{#1}}}\vspace{0.5\baselineskip}}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Casting}
+
+Set out who is in the cast, details, times, etc.
+
+\begin{itemize}
+
+  \item M: one musician
+  \item P: one PRIMARY speaker
+  \item S: three SECONDARY roles
+  \item T: three TERTIARY roles
+  \item Q: one person on technical cues
+  \item R: one runner on the floor
+
+\end{itemize}
+
+\newpage
+
+\section{Instructions}
+
+Please read this section carefully before performing.  It is short but the instructions are important.
+
+\newpage
+
+\subsection{Formatting}
+
+Boxes have \textit{instructions}, which are to be followed but not spoken.
+
+\tsdirectionforall{A solid box has directions that \textsc{everyone} should read.}
+
+% \setlength{\fboxrule}{1pt}
+
+\tstechnical{A dashed box has \textit{technical instructions}, which are also in italics to set them apart. Everyone can read them, but only Q and R will act on them.}
+
+\tsdirectionforall{Square brackets are for instructions for \textit{one person}.}
+
+\musician{[PLAY A NOTE.]}
+
+\primary{[POINT TO THE TERTIARY GROUP.]}
+
+\tsdirectionforall{Your lines are in bold.  Here is an example of what SECONDARY 1 sees.}
+
+\secoone{(\textit{thoughtfully}):  When it is your turn to say something, the line will be bold, like this.}
+
+\secotwo{Authority is constructed ...}
+
+\secothr{... and contextual.}
+
+\tsdirectionforall{PAUSE 1}
+
+\secoone{Once again, bold lines are the ones you say.}
+
+\subsection{Pauses}
+
+[PAUSE 1] means pause for a count of one, which you might time by saying to youself, ``One one thousand.''.  [PAUSE 2] means pause for a count of two, which you might time by saying to yourself, ``One one thousand, two one thousand.''  [PAUSE 5], you can see, would be a long pause where you count up to 5.  Don't rush a pause.  The audience will wait for you.
+
+\subsection{How to say things}
+
+Sometimes there will be instructions like \textit{quickly} or \textit{thoughtfully} about how you should say something.  Try your best, but don't worry about it.
+
+Words that might be hard to pronounce, like the name \textit{Schoenberg}, will have a phonetic pronunciation beside them in square brackets: [SHERN-berg].  The capital letters indicate emphasis.  Give it your best shot, but if you make a mistake, don't worry about it, try again or just move on.  If the audience noticed, they will forget quickly .
+
+The John Cage composition \textit{4' 33''} should always be pronounced in full as ``four minutes and thirty-three seconds.''
+
+\subsection{For the musician}
+
+We use the piano to help indicate when a new section begins.  When you see the instruction PLAY A NOTE, do this:  pick any key on the piano (black or white), hit it hard, and keep pressing the key down until you can no longer hear any sound from it, even if performers start talking.  When you can't hear the note any more, wait a few more seconds to be sure, then lift your finger up.  Then wait.
+
+\newpage
+
+\section{The score}
+
+\subsection{Setup}
+
+\tstechnical{Setup instructions here.  Lights.  Curtains and other things.}
+
+\newpage
+
+\subsection{Scenario 0: Introductory film}
+
+\tstechnical{Show the film.}
+
+\tstechnical{When it is finished, move to an empty black screen.}
+
+\newpage
+
+\subsection{Scenario 1: Introduction}
+
+(Introduction and setup.  Give the theme and explain a bit about it and the ACRL and so on, so everyone knows the concept and what to expect for the rest of the performance.)
+
+\newpage
+
+\subsection{Scenario 2: John Cage}
+
+\musician{PLAY A NOTE.}
+
+[PAUSE 4]
+
+\primary{To help us understand this, we're going to need an example.  A person.  Someone from the arts. [PAUSE 1.]  We're going to use John Cage.}
+
+\tstechnical{Show photograph of John Cage on screen.}
+
+\primary{[LOOK AT THE SECONDARY GROUP; POINT TO THEM BRIEFLY.] Background.}
+
+\secoone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.}
+
+\secotwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by hidden musicians.}
+
+A:  Cage had been married, but divorced his wife in 1945 and spent the rest of his life with Merce Cunningham, a dancer and choreographer.
+
+B:  He became a Buddhist.
+
+C:  He used chance into his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.
+
+A:  He used the \textit{I Ching} [EE CHING] as a compositional tool.
+
+B:  He composed a work for twenty-four people playing twelve radios.
+
+C:  He composed the silent piece.
+
+A:  He smoked a lot.
+
+B:  He was on the American quiz show \textit{What's My Line?} in the 1960.
+
+C:  Late in life, he followed a macrobiotic diet, and took his own food with him when he travelled.
+
+A:  He laughed a lot.
+
+B:  He organized the first Happenings.
+
+C:  He composed the silent piece.
+
+A:  He was a mycologist.
+
+B:  He was friends with visual artists like Robert Rauschenberg [ROWSH-en-berg], who once made a work by taking a pencil drawing by Willem de Kooning [WILL-um de KOO-ning] and erasing everything on it.
+
+C: He composed the silent piece.
+
+[PAUSE 2]
+
+M: The silent piece.  That's \textit{4' 33''} [four minutes and thirty-three seconds].  This is the score.
+
+TECH:  \textit{Show the score.}
+
+M: It has three movements.  Each is the word ``Tacet'' [TASS-et].  This tells the musician not to play.  It was first performed by pianist David Tudor in 1952.  He came out on stage and sat at the piano.
+
+A: In the first movement, he didn't play the piano.
+
+B: In the second movement, he didn't play the piano.
+
+C: In the third movement, he didn't play the piano.
+
+M: After four minutes and thirty-three seconds of not playing, he stood up, and the piece was over.  That's the silent piece.
+
+A: Except ...
+
+[PAUSE 2]
+
+B: ... it's not ...
+
+[PAUSE 3]
+
+C (\textit{firmly}): ... silent.
+
+[PAUSE 4]
+
+A: Even though the pianist wasn't playing ...
+
+B: ... the audience still heard sounds ...
+
+C: ... from themselves, and the room, and the whole environment.
+
+M:  As Cage said, ``There's no such thing as silence.''
+
+\newpage
+
+\subsection{Scenario 3: Authority is Constructed and Contextual}
+
+PIANIST:  [PLAY A NOTE.]
+
+[PAUSE 4]
+
+A (\textit{thoughtfully}):  Authority is constructed and contextual.
+
+\tstechnical{Show ``Authority is constructed and contextual''.}
+
+B:  Authority is constructed ...
+
+C:  ... and contextual.
+
+[PAUSE 1]
+
+A:  Authority
+
+B:  is constructed
+
+C:  and contextual.
+
+[PAUSE 1]
+
+M:  This is the concept in question.  This is the \textit{frame} we are going to investigate and try to understand.  Let's look at the definition.
+
+\tstechnical{Show ``Information resources reflect'' paragraph.}
+
+M:  One should never read a block of text from a screen, but they're going to read a block of text from a screen.
+
+A:  ``Information resources reflect their creators’ expertise and credibility, and are evaluated based on the information need and the context in which the information will be used.''
+
+B:  ``Authority is constructed in that various communities may recognize different types of authority.''
+
+C:  ``It is contextual in that the information need may help to determine the level of authority required.''
+
+\tstechnical{Show ``Information resources reflect'' paragraph with first line bold.}
+
+M:  What's an information resource?  Define.
+
+A:  A book.
+
+B:  A web site.
+
+C:  A documentary on TV.
+
+A:  A Facebook post.
+
+B:  An article in an academic journal.
+
+C:  A thread on Twitter.
+
+A:  A newspaper report.
+
+B:  A pamphlet your doctor gave you.
+
+C:  Could be a person!  Like your cousin who knows about all the new restaurants.
+
+M:  How do they reflect their creators' expertise and credibility?
+
+A:  The book was written by someone who's spent years researching the topic.
+
+B:  The web site about was made by a group of hobbyists who spend all their spare time on the subject.
+
+C:  The documentary was made by investigative journalists.
+
+A:  The post on Facebook was made by someone who was actually at the event.
+
+B:  The academic article is by a team of people at a research laboratory at a university.
+
+C:  The thread on Twitter is by a former cabinet minister, critiquing today's government.
+
+M:  These are all \textit{positive} examples, where valid expertise is demonstrating credibility.  What about \textit{negative} examples?
+
+A:  The report in the newspaper is actually a paid advertisement that's made to look like a real report.
+
+B:  The pamphlet is from a drug company marketing their own drug.
+
+C:  Your cousin likes really, really loud restaurants that serve meat cooked rare, but you're a vegetarian with tinnitus [tin-EYE-tuss].
+
+M:  Now we're going to skip over some middle stuff and talk about expertise.
+
+\tstechnical{Show ``temporary slide about expertise'' slide.}
+
+M:  We have a lot of experts here.  In fact, everyone is an expert on something.
+
+A:  I've spent years doing book design, and can set type by hand or on a computer.
+
+B:  I'm a musician and I have some expertise with synthesizers.
+
+C:  I am a world expert---in fact, \textit{the} world expert---on the contents of my sock drawer.
+
+M:  The Club is full of experts.  We have experts on ...
+
+A:  Architecture, botany, composing, dance, ear nose and throat-ology ...
+
+B:  Things starting with other letters, up to zed.
+
+C:  If we use this list, it needs to be filled in.  Please send suggestions to Bill.
+
+[PAUSE 1.]
+
+M:  All right, enough of that.  The question is:  are authority and expertise the same?
+
+A:  Let's look at it starting with authority.  If you're an authority on something, does that mean you're an expert?
+
+B:  There are a lot of ``authorities'' in the media, talking about politics and current events.
+
+C:  They don't seem to be experts on anything in particular, except maybe giving hot takes on what just happened.
+
+A:  Politicians are authorities, but a cabinet minister isn't an \textit{expert} on their brief.  They have experts working for them.
+
+B:  I've heard Nobel Prize winners say that after they win the prize, they can't do nearly as much research any more.  They're too busy being Nobel Prize winners, giving talks and receiving other awards.  Now they're authorities, not experts, because their knowledge is getting out of date.
+
+C:  I went up to the McMichael gallery in the summer.  I'd never been before, and didn't know how to get there, but my friend goes a lot.  I asked her, and she said, go up this highway, turn left, go here, turn right, and you can't miss it.  She's an authority on getting to the McMichael, but it's not like she's an expert on southern Ontario transportation systems.
+
+M:  Are there different kinds of authority?
+
+A:  Well, anyone in a uniform.  Police officers and firefighters and generals and ship captains and nurses.  If they tell you to do something, you're just going to do it.
+
+B:  Or someone respected in your family.  I remember the way my grandparents ruled over the whole family at every big holiday dinner.  If you did something different from how they liked it, watch out.
+
+C:  These are different kinds of roles people play in society.
+
+A:  But it depends on where they're playing the role.
+
+B:  Right.  If a firefighter started moving things around on my grandparent's dinner table, there'd be trouble.  They have no authority there.
+
+C:  And if your grandparents tried to grab some hoses and start bossing people around when a house is on fire, there'd be trouble.
+
+M:  Constructed.  Contextual.  Are there other kinds of authority?
+
+A:  Eyewitnesses, or people that have been through something.
+
+B:  If you're going to get a new hip, you'd want to talk to some people that have had that done.
+
+C:  There are tens of thousands of years of women passing on advice about childbirth.
+
+A:  Maybe in those cases, the doctors and nurses are the experts, and maybe a different kind of authority, but this authority comes through lived experience.
+
+B:  I've been in my share of marches and protests over the years.  They never get reported right.  You have to be there to know.
+
+C:  There's a lot like that at work, too.  People who've been through things over the years, they \textit{know}.  It comes from experience.
+
+M:  Authority from special experience.  Any others?
+
+\newpage
+
+\subsection{Scenario 4: Cage and music}
+
+\newpage
+
+\subsection{Scenario 5: Cage and mushrooms}
+
+\newpage
+
+\subsection{Scenario 6: Swiss roll: Where is Cage on authority and how it is constructed and contextual?}
+
+\newpage
+
+\subsection{Scenario 7: 4'33''}
+
+\newpage
+
+\subsection{Coda}
+
+\newpage
+
+\section{Credits}
+
+
+
+\end{document}
