@@ -3,4 +3,5 @@ Gemfile.lock
 *.log
 *.out
 *.aux
+*.toc
 web/.jekyll-cache
