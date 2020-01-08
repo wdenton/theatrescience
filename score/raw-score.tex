@@ -1,4 +1,5 @@
 \documentclass[17pt]{extarticle}
+% \documentclass[17pt]{memoir}
 
 \title{Theatre Science}
 \author{Williamson and Denton}
@@ -50,14 +51,14 @@
 % % "color" mode; do something different..
 % }
 
-\newcommand{\musician}[1]{\ifthenelse{ \equal{\speaker}{musician} }{\textbf{MUSICIAN: #1}}{PIANIST: #1}}
-\newcommand{\primary}[1]{\ifthenelse{ \equal{\speaker}{primary} }{\textbf{PRIMARY: #1}}{PRIMARY: #1}}
-\newcommand{\secoone}[1]{\ifthenelse{ \equal{\speaker}{secoone} }{\textbf{SECONDARY 1: #1}}{SECONDARY 1: #1}}
-\newcommand{\secotwo}[1]{\ifthenelse{ \equal{\speaker}{secotwo} }{\textbf{SECONDARY 2: #1}}{SECONDARY 2: #1}}
-\newcommand{\secothr}[1]{\ifthenelse{ \equal{\speaker}{secothr} }{\textbf{SECONDARY 3: #1}}{SECONDARY 3: #1}}
-\newcommand{\tertone}[1]{\ifthenelse{ \equal{\speaker}{tertone} }{\textbf{TERTIARY 1: #1}}{TERTIARY 1: #1}}
-\newcommand{\terttwo}[1]{\ifthenelse{ \equal{\speaker}{terttwo} }{\textbf{TERTIARY 1: #1}}{TERTIARY 2: #1}}
-\newcommand{\tertthr}[1]{\ifthenelse{ \equal{\speaker}{tertthr} }{\textbf{TERTIARY 1: #1}}{TERTIARY 3: #1}}
+\newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{MUSICIAN: #1}}{PIANIST: #1}}
+\newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{PRIMARY: #1}}{PRIMARY: #1}}
+\newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{SECONDARY 1: #1}}{SECONDARY 1: #1}}
+\newcommand{\secondarytwo}[1]{\ifthenelse{ \equal{\speaker}{secondarytwo}}{\textbf{SECONDARY 2: #1}}{SECONDARY 2: #1}}
+\newcommand{\secondarythr}[1]{\ifthenelse{ \equal{\speaker}{secondarythr}}{\textbf{SECONDARY 3: #1}}{SECONDARY 3: #1}}
+\newcommand{\tertiaryone}[1]{ \ifthenelse{ \equal{\speaker}{tertiaryone} }{\textbf{TERTIARY 1: #1}}{TERTIARY 1: #1}}
+\newcommand{\tertiarytwo}[1]{ \ifthenelse{ \equal{\speaker}{tertiarytwo} }{\textbf{TERTIARY 1: #1}}{TERTIARY 2: #1}}
+\newcommand{\tertiarythr}[1]{ \ifthenelse{ \equal{\speaker}{tertiarythr} }{\textbf{TERTIARY 1: #1}}{TERTIARY 3: #1}}
 
 % Box formatting, so they have nice lines and are well padded
 \setlength{\fboxsep}{1em}
@@ -72,6 +73,10 @@
 \begin{document}
 
 \maketitle
+
+\vfill
+
+(This script is for: \speaker)
 
 \newpage
 
@@ -120,15 +125,15 @@ Boxes have \textit{instructions}, which are to be followed but not spoken.
 
 \tsdirectionforall{Your lines are in bold.  Here is an example of what SECONDARY 1 sees.}
 
-\secoone{(\textit{thoughtfully}):  When it is your turn to say something, the line will be bold, like this.}
+\secondaryone{(\textit{thoughtfully}):  When it is your turn to say something, the line will be bold, like this.}
 
-\secotwo{Authority is constructed ...}
+\secondarytwo{Authority is constructed ...}
 
-\secothr{... and contextual.}
+\secondarythr{... and contextual.}
 
 \tsdirectionforall{PAUSE 1}
 
-\secoone{Once again, bold lines are the ones you say.}
+\secondaryone{Once again, bold lines are the ones you say.}
 
 \subsection{Pauses}
 
@@ -184,17 +189,17 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{[LOOK AT THE SECONDARY GROUP; POINT TO THEM BRIEFLY.] Background.}
 
-\secoone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.}
+\secondaryone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.}
 
-\secotwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.}
+\secondarytwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.}
 
-\secothr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce Cunningham, a dancer and choreographer.  Later in life, he became a Buddhist.  He followed a macrobiotic diet, and took his own food with him when he travelled.}
+\secondarythr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce Cunningham, a dancer and choreographer.  Later in life, he became a Buddhist.  He followed a macrobiotic diet, and took his own food with him when he travelled.}
 
-\secoone{He used chance into his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.}
+\secondaryone{He used chance into his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.}
 
-\secotwo{He was friends with contemporary visual artists such as Robert Rauschenberg [ROWSH-en-berg], who once made a work by taking a pencil drawing by Willem de Kooning [WILL-um de KOO-ning] and erasing everything on it.  }
+\secondarytwo{He was friends with contemporary visual artists such as Robert Rauschenberg [ROWSH-en-berg], who once made a work by taking a pencil drawing by Willem de Kooning [WILL-um de KOO-ning] and erasing everything on it.  }
 
-\secothr{He smoked a lot.  He laughed a lot.  He organized the first Happenings.  He was a mycologist [my-COLL-o-jist].  He composed the silent piece.}
+\secondarythr{He smoked a lot.  He laughed a lot.  He organized the first Happenings.  He was a mycologist [my-COLL-o-jist].  He composed the silent piece.}
 
 \tsdirectionforall{PAUSE 2}
 
@@ -204,31 +209,31 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{It has three movements.  Each is the word ``Tacet'' [TASS-it].  This tells the musician not to play.  It was first performed by pianist David Tudor in 1952.  He came out on stage and sat at the piano.}
 
-\tertone{In the first movement, he didn't play the piano.}
+\tertiaryone{In the first movement, he didn't play the piano.}
 
-\terttwo{In the second movement, he didn't play the piano.}
+\tertiarytwo{In the second movement, he didn't play the piano.}
 
-\tertthr{In the third movement, he didn't play the piano.}
+\tertiarythr{In the third movement, he didn't play the piano.}
 
 \primary{After four minutes and thirty-three seconds of not playing, he stood up, and the piece was over.  That's the silent piece.}
 
-\secoone{Except ...}
+\secondaryone{Except ...}
 
 \tsdirectionforall{PAUSE 2}
 
-\secotwo{... it's not ...}
+\secondarytwo{... it's not ...}
 
 \tsdirectionforall{PAUSE 3}
 
-\secothr{(\textit{firmly}) ... silent.}
+\secondarythr{(\textit{firmly}) ... silent.}
 
 \tsdirectionforall{PAUSE 4}
 
-\secoone{Even though the pianist wasn't playing ...}
+\secondaryone{Even though the pianist wasn't playing ...}
 
-\secotwo{... the audience still heard sounds ...}
+\secondarytwo{... the audience still heard sounds ...}
 
-\secothr{... from themselves, and the room, and the whole environment.}
+\secondarythr{... from themselves, and the room, and the whole environment.}
 
 \primary{As Cage said, ``There's no such thing as silence.''}
 
