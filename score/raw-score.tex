@@ -24,6 +24,9 @@
 \usepackage{fancybox}
 \usepackage{dashbox}
 
+\usepackage{enumitem}
+\setlist{noitemsep}
+
 \usepackage{marginnote}
 \newcommand{\mysidenote}[1]{\marginnote{\raggedrightmarginnote \footnotesize #1}}
 
@@ -51,7 +54,9 @@
 % % "color" mode; do something different..
 % }
 
-\newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{MUSICIAN: #1}}{PIANIST: #1}}
+\newcommand{\blankspace}{\_\_\_\_\_\_\_\_}
+
+\newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{MUSICIAN: #1}}{MUSICIAN: #1}}
 \newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{PRIMARY: #1}}{PRIMARY: #1}}
 \newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{SECONDARY 1: #1}}{SECONDARY 1: #1}}
 \newcommand{\secondarytwo}[1]{\ifthenelse{ \equal{\speaker}{secondarytwo}}{\textbf{SECONDARY 2: #1}}{SECONDARY 2: #1}}
@@ -68,7 +73,7 @@
 \newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
 
 % tstechnical = Technical direction
-\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{\textwidth}{TECH: \textit{#1}}}\vspace{0.5\baselineskip}}
+\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{\textwidth}{\textit{#1}}}\vspace{0.5\baselineskip}}
 
 \begin{document}
 
@@ -76,7 +81,7 @@
 
 \vfill
 
-(This script is for: \speaker)
+(This score is for: \speaker)
 
 \newpage
 
@@ -86,18 +91,28 @@
 
 \section{Casting}
 
-Set out who is in the cast, details, times, etc.
+\begin{description}[align=right,labelwidth=2cm]
 
-\begin{itemize}
+  \item [M] one musician
+  \item [P] one PRIMARY speaker
+  \item [S] three SECONDARY roles
+  \begin{description}[align=right,labelwidth=2cm]
+    \item [S1] can go up the stairs to the stage; does one Mushroom Verbatim
+    \item [S2] always on the floor; does one Mushroom Verbatim
+    \item [S3] limited movement; stays in the podium zone
+  \end{description}
+  \item [T] three TERTIARY roles
+  \begin{description}[align=right,labelwidth=2cm]
+    \item [T1] limited movement on stage
+    \item [T2] limited movement on stage
+    \item [T3]  stage right; does not move; can remain seated
+  \end{description}
+  \item [Q] one technical person in the booth
+  \item [R] one problem solver on the floor
 
-  \item M: one musician
-  \item P: one PRIMARY speaker
-  \item S: three SECONDARY roles
-  \item T: three TERTIARY roles
-  \item Q: one person on technical cues
-  \item R: one runner on the floor
+\end{description}
 
-\end{itemize}
+PRIMARY does about 45\% of the speaking, while the SECONDARY group shares another 45\% and TERTIARY shares 10\%.
 
 \newpage
 
@@ -149,35 +164,105 @@ The John Cage composition \textit{4' 33''} should always be pronounced in full a
 
 \subsection{For the musician}
 
-We use the piano to help indicate when a new section begins.  When you see the instruction PLAY A NOTE, do this:  pick any key on the piano (black or white), hit it hard, and keep pressing the key down until you can no longer hear any sound from it, even if performers start talking.  When you can't hear the note any more, wait a few more seconds to be sure, then lift your finger up.  Then wait.
+We use the piano to help indicate when a new section begins.  When you see the instruction PLAY A NOTE, do this:  pick any key on the piano (black or white, but not from too high on the right, because those high sounds won't resonate as long), hit it hard, and keep pressing the key down until you can no longer hear any sound from it, even if performers start talking.  When you can't hear the note any more, wait a few more seconds to be sure, then lift your finger up.  Then wait for the next scenario.
 
 \newpage
 
 \section{The score}
 
-\subsection{Setup}
+\subsection{Setup: technical}
 
-\tstechnical{Setup instructions here.  Lights.  Curtains and other things.}
+\tstechnical{R: Setup instructions here.  Projector, laptop, screen, etc..}
+
+\tstechnical{Q LX: Lighting setup.  GM \(\uparrow\) 4. }
+
+\tstechnical{Q SX: Prepare the thirty-minute introductory background sound with time announcements.}
+
+\tstechnical{Q SX: At 1930, play the thirty-minute introductory background.  It will end at 2000.}
+
+\newpage
+
+\subsection{Setup: cast}
 
 \tsdirectionforall{Instructions for the cast: where to stand or sit, etc.}
 
 \newpage
 
-\subsection{Scenario 0: Introductory film}
+\subsection{Scenario 0: Introductory film (3 min)}
 
-\tstechnical{Show the film.}
+\tstechnical{R: Show the film.  When it is finished, move to an empty black screen.}
 
-\tstechnical{When it is finished, move to an empty black screen.}
+\tstechnical{Q SX: Announcement on microphone.  ``Ladies and gentleman, performing Theatre Science tonight are:\\
+  \blankspace as the Musician, \\
+  \blankspace as Primary, \\
+  \blankspace as Secondary One, \\
+  \blankspace as Secondary Two, \\
+  \blankspace as Secondary Three, \\
+  \blankspace as Tertiary One, \\
+  \blankspace as Tertiary Two, \\
+  \blankspace as Tertiary Three, \\
+  William Denton as Q and Ashley Williamson as R. \\
+  You may follow along with the score provided.  Theatre Science is now beginning.  Theatre Science has begun.''}
+
+\tstechnical{Q: Hit the gong loudly.}
 
 \newpage
 
-\subsection{Scenario 1: Introduction}
+\subsection{Scenario 1: Introduction (4 min)}
 
-(Introduction and setup.  Give the theme and explain a bit about it and the ACRL and so on, so everyone knows the concept and what to expect for the rest of the performance.)
+\tstechnical{Q: Lights up.}
+
+\tsdirectionforall{MUSICIAN:  Follow the red line until you are behind the piano, then sit on the piano stool. }
+
+\musician{[PLAY A NOTE.]}
+
+\tsdirectionforall{TERTIARY:  Follow the orange line until you come to stand in a square.  T1 and T2: you will stand.  T3: you may sit or stand, as you choose.}
+
+\tsdirectionforall{PRIMARY: Follow the purple line.  Stop on the square.}
+
+\tsdirectionforall{SECONDARY:  S1: follow the blue line on the right and stop on the X.  S2: follow the green line on the left and stop on the X.  S3: follow the pink tape and stop on the circle.}
+
+\tsdirectionforall{When you have arrived at your position, wait for the note from the piano to stop.}
+
+\tsdirectionforall{PRIMARY:  When you can no longer hear the piano, wait one more second.  Slowly raise your arms over your head, then slowly lower them back to your sides.}
+
+\tsdirectionforall{SECONDARY and TERTIARY:  Copy Primary's arm movements as best you can.}
+
+\primary{[PAUSE 1] Good evening, everyone.  This show is about a concept from the field of library and information science.  The concept is:  \textit{Authority is constructed and contextual.} }
+
+\tstechnical{R: Slide: ``Authority is constructed and contextual.''}
+
+\primary{Where does this come from?  It comes from a part of librarianship called \textit{information literacy}.}
+
+\secondaryone{\textit{Literacy}, on its own, can be defined in a very simple way as being able to read and write.  But the world is a lot more complicated now than five thousand years ago.  We have text messages, online newspapers, social media and nutrition labels on food.}
+
+\secondarytwo{There are many different kinds of literacies.  The equivalent with numbers is \textit{numeracy}. Being able to read and follow maps is a kind of literacy. There is also \textit{digital literacy}, about being able to use digital tools, and \textit{media literacy}. }
+
+\secondarythr{For librarians the key concept is \textit{information literacy}.  Here's a definition that comes from a part of the American Library Association.}
+
+\tstechnical{R: Slide: ``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''}
+
+\primary{[POINT BRIEFLY TO THE SCREEN, THEN READ.]  ``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''}
+
+\tertiaryone{``The set of integrated abilities.''  That means some things you know how to do, that fit together well.}
+
+\tertiarytwo{``Encompassing the reflective discovery of information.''  So it's about how to find information, and how to think about how you found that information.}
+
+\tertiarythr{``Understanding how information is produced and valued.''  That value can be financial or emotional or something else.  How is the information made, and how do people respond to it?}
+
+\tertiaryone{``The use of information in creating new knowledge.''  When we want to find something out, when we have a gap in our knowledge, it's often because we want to make something new of our own. }
+
+\tertiarytwo{``Participating ethically in communities of learning.''  The ethics involve attribution and citation, understanding copyrights and licenses, knowing about plagiarism, and so on.}
+
+\tertiarythr{And a community of learning could be a class in a school, a college, a university, a continuing education program, but it could be people anywhere: a neighbourhood group, some people here at the Club, or you and your family.}
+
+\primary{So think about information literacy as being the skills that help you find information you need and DEFINE IT CASUALLY HERE.}
+
+\primary{The frames.  The one.}
 
 \newpage
 
-\subsection{Scenario 2: John Cage}
+\subsection{Scenario 2: John Cage (3 min)}
 
 \musician{PLAY A NOTE.}
 
@@ -187,27 +272,35 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tstechnical{Show photograph of John Cage on screen.}
 
-\primary{[LOOK AT THE SECONDARY GROUP; POINT TO THEM BRIEFLY.] Background.}
+\tsdirectionforall{Face the screen with your bodies.}
 
-\secondaryone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.}
+\primary{[GESTURE AT THE SECONDARY GROUP TO DIRECT ATTENTION TO THEM.] Background.}
 
-\secondarytwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.}
+\tsdirectionforall{PRIMARY: Walk along the purple tape to the triangle, then face the centre of the hall.}
 
-\secondarythr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce Cunningham, a dancer and choreographer.  Later in life, he became a Buddhist.  He followed a macrobiotic diet, and took his own food with him when he travelled.}
+\secondaryone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.  [TURN ONE QUARTER TO THE LEFT.]}
 
-\secondaryone{He used chance into his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.}
+\secondarytwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.  [TURN ONE-QUARTER TO THE RIGHT.]}
 
-\secondarytwo{He was friends with contemporary visual artists such as Robert Rauschenberg [ROWSH-en-berg], who once made a work by taking a pencil drawing by Willem de Kooning [WILL-um de KOO-ning] and erasing everything on it.  }
+\tsdirectionforall{ADD DON GILLIES PHOTO.  T3 holds up the Don Gillies head.}
 
-\secondarythr{He smoked a lot.  He laughed a lot.  He organized the first Happenings.  He was a mycologist [my-COLL-o-jist].  He composed the silent piece.}
+\secondarythr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce Cunningham, a dancer and choreographer.  Later in life, he became a Buddhist.  He followed a macrobiotic diet, and took his own food with him when he travelled.   [TURN ONE-QUARTER TO THE LEFT.]}
+
+\secondaryone{He used chance into his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.  [FACE THE CENTRE.]}
+
+\secondarytwo{He was friends with contemporary visual artists such as Robert Rauschenberg [ROWSH-en-berg], who once made a work by taking a pencil drawing by Willem de Kooning [WILL-um de KOO-ning] and erasing everything on it.  [FACE THE CENTRE.]}
+
+\secondarythr{He smoked a lot.  He laughed a lot.  He organized the first Happenings.  He was a mycologist [my-COLL-o-jist].  He composed the silent piece.  [FACE THE CENTRE.]}
 
 \tsdirectionforall{PAUSE 2}
 
-\primary{The silent piece.  That's \textit{4' 33''} [four minutes and thirty-three seconds].  This is the score.}
+\primary{The silent piece.  That's \textit{4' 33''} [four minutes and thirty-three seconds].  [WALK ALONG THE PURPLE TAPE AND STOP ON THE X.]  This is the score.  [GESTURE TO THE SCORE WITH A SWEEP OF YOUR ARM.]}
 
 \tstechnical{Show the score.}
 
 \primary{It has three movements.  Each is the word ``Tacet'' [TASS-it].  This tells the musician not to play.  It was first performed by pianist David Tudor in 1952.  He came out on stage and sat at the piano.}
+
+\tsdirectionforall{PRIMARY and all SECONDARY look at TERTIARY on stage.}
 
 \tertiaryone{In the first movement, he didn't play the piano.}
 
@@ -217,11 +310,11 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{After four minutes and thirty-three seconds of not playing, he stood up, and the piece was over.  That's the silent piece.}
 
-\secondaryone{Except ...}
+\secondaryone{Except ... [RAISE ONE FINGER OVER YOUR HEAD]}
 
 \tsdirectionforall{PAUSE 2}
 
-\secondarytwo{... it's not ...}
+\secondarytwo{... it's not ... [SHRUG YOUR SHOULDERS]}
 
 \tsdirectionforall{PAUSE 3}
 
@@ -229,7 +322,7 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tsdirectionforall{PAUSE 4}
 
-\secondaryone{Even though the pianist wasn't playing ...}
+\secondaryone{Even though the pianist wasn't playing ... [LOWER YOUR FINGER]}
 
 \secondarytwo{... the audience still heard sounds ...}
 
@@ -237,9 +330,11 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{As Cage said, ``There's no such thing as silence.''}
 
+\tsdirectionforall{SECONDARY and TERTIARY: Give an exaggerated shrug and knowing wink to an audience member of your choice.}
+
 \newpage
 
-\subsection{Scenario 3: Authority is Constructed and Contextual}
+\subsection{Scenario 3: Authority is Constructed and Contextual (5 min)}
 
 PIANIST:  [PLAY A NOTE.]
 
@@ -387,21 +482,21 @@ M:  Authority from special experience.  Any others?
 
 \newpage
 
-\subsection{Scenario 4: Cage and music}
+\subsection{Scenario 4: Cage and music (3 min)}
 
 \newpage
 
-\subsection{Scenario 5: Cage and mushrooms}
+\subsection{Scenario 5: Cage and mushrooms (6 min)}
 
 \newpage
 
-\subsection{Scenario 6: Swiss roll}
+\subsection{Scenario 6: Swiss roll (5 min)}
 
 Tie it all together about Cage and authority and how it is constructed and contextual.
 
 \newpage
 
-\subsection{Scenario 7: 4' 33''}
+\subsection{Scenario 7: 4' 33'' (6 min)}
 
 \tsdirectionforall{Instructions on where to move.}
 
@@ -413,7 +508,7 @@ Tie it all together about Cage and authority and how it is constructed and conte
 
 \newpage
 
-\subsection{Coda}
+\subsection{Coda (1 min)}
 
 \primary{Thank you.}
 
@@ -431,7 +526,7 @@ Tie it all together about Cage and authority and how it is constructed and conte
 
 Created by Ashley Williamson and William Denton.
 
-Theatre Science would not exist without the Arts and Letters Club of Toronto.  Thanks to everyone we've ever worked with in any stage production at the club.  We're grateful to the Stage Committee for giving us the time for these performances.  Special thanks to Fiona McKeown and Chris Gardener.
+Theatre Science would not exist without the Arts and Letters Club of Toronto.  Thanks to everyone we've ever worked with in any stage production at the club.  We're grateful to the Stage Committee for giving us the time for these performances.  Special thanks to Fiona McKeown and Chris Gardener.  Very special thanks to Michael Spence, who embodies both Theatre and Science.
 
 Theatre Science is CC-BY.  It is licensed under a Creative Commons Attribution 4.0 International license.
 
