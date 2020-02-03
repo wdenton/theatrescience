@@ -5,44 +5,46 @@
 \author{Williamson and Denton}
 \date{February 2020\\Basic title page for now}
 
-\usepackage[margin=4cm]{geometry}
-
-\usepackage{extsizes}
-
-% \usepackage{pifont}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{Theatre Science}
 
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \microtypecontext{spacing=nonfrench}
 
 \usepackage[T1]{fontenc}
-
 \usepackage[utf8]{inputenc}
+
+\usepackage[margin=4cm]{geometry}
+
+% Baskerville font, with text figures.
+\usepackage[osf]{Baskervaldx}
+
+% Allows use of 17 pt font in the document.
+\usepackage{extsizes}
 
 \usepackage{xcolor}
 
-\usepackage{amssymb}
+\usepackage{etoolbox}
+
+% \usepackage{amssymb}
 
 % Good for printing long URLs over breaking line.
 \usepackage{xurl}
 
+% For nice and easy boxes.
 \usepackage{fancybox}
 \usepackage{dashbox}
 
+% Makes lists compact, with less spacing.
 \usepackage{enumitem}
 \setlist{noitemsep}
 
-\usepackage{marginnote}
-\newcommand{\mysidenote}[1]{\marginnote{\raggedrightmarginnote \footnotesize #1}}
+% \usepackage{marginnote}
+% \newcommand{\mysidenote}[1]{\marginnote{\raggedrightmarginnote \footnotesize #1}}
 
 % Disable section numbering for the whole document.
 \setcounter{secnumdepth}{0}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead[L]{Theatre Science}
-
-% Baskerville font
-\usepackage[osf]{Baskervaldx}
 
 % Use space between paragraphs, with no indent.
 \usepackage{parskip}
@@ -60,6 +62,17 @@
 
 \newcommand{\blankspace}{\_\_\_\_\_\_\_\_}
 
+\newcommand{\performerletter}[1]{%
+  \ifthenelse{\equal{#1}{musician}}{M}{}%
+  \ifthenelse{\equal{#1}{primary}}{P}{}%
+  \ifthenelse{\equal{#1}{secondaryone}}{S1}{}%
+  \ifthenelse{\equal{#1}{secondarytwo}}{S2}{}%
+  \ifthenelse{\equal{#1}{secondarythr}}{S3}{}%
+  \ifthenelse{\equal{#1}{tertiaryone}}{T1}{}%
+  \ifthenelse{\equal{#1}{tertiarytwo}}{T2}{}%
+  \ifthenelse{\equal{#1}{tertiarythr}}{T3}{}%
+}
+
 \newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
 \newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{P: #1}}{P: #1}}
 \newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{S1: #1}}{S1: #1}}
@@ -69,15 +82,44 @@
 \newcommand{\tertiarytwo}[1]{ \ifthenelse{ \equal{\speaker}{tertiarytwo} }{\textbf{T1: #1}}{T2: #1}}
 \newcommand{\tertiarythr}[1]{ \ifthenelse{ \equal{\speaker}{tertiarythr} }{\textbf{T1: #1}}{T3: #1}}
 
+% \ifthenelse{\equal{\speaker}{musician}}{%
+%   \newcommand{\directionboxweight}{5pt}
+% }{%
+%   \newcommand{\directionboxweight}{1pt}
+% }
+
+% Stage directions are in small caps.
+\newcommand{\direction}[1]{[\textsc{\lowercase{#1}}]}
+
 % Box formatting, so they have nice lines and are well padded
 \setlength{\fboxsep}{1em}
 \setlength{\fboxrule}{2pt}
 
 % tsdirectionforall = Direction for All
-\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+
+\newtoggle{thickbox}
+\ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
+
+  \newtoggle{thick}
+
+% directionbox
+%\newcommand{\directionbox}[1]{\setlength{\fboxrule}{\directionboxweight{}}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+\newcommand{\directionbox}[2]{
+  \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thick}}{\togglefalse{thick}}
+  % \toggletrue{thick}
+  % \ifthenelse{\equal{musician}{musician}{\toggletrue{thick}}{\togglefalse{thick}}}
+  % \setlength{\fboxrule}{\ifthenelse{\equal{#1}{\speaker}}{5pt}{1pt}}%
+  %\setlength{\fboxrule}{\ifthenelse{\equal{\speaker}{#1}}{5pt}{1pt}}%
+  \setlength{\fboxrule}{\iftoggle{thick}{5pt}{1pt}}%
+  \vspace{0.5\baselineskip}%
+  \fbox{\parbox{0.9\textwidth}{\iftoggle{thick}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
+  \setlength{\fboxrule}{1pt}%
+  \vspace{0.5\baselineskip}
+}
 
 % tstechnical = Technical direction
-\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{\textwidth}{\textit{#1}}}\vspace{0.5\baselineskip}}
+\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{0.9\textwidth}{\textit{#1}}}\vspace{0.5\baselineskip}}
 
 \begin{document}
 
@@ -87,7 +129,11 @@
 
 Details: https://theatrescience.org/ CC BY
 
-(This score is for: \speaker)
+(This score is for: \textbf{\speaker} with prefix ``\performerletter{\speaker}''.)
+
+% \performerletter{\speaker}
+
+% \ifthenelse{\equal{musician}{\speaker}}{5pt}{1pt}
 
 \newpage
 
@@ -146,9 +192,9 @@ Boxes have \textit{instructions}, which are to be followed but not spoken.
 
 \secondaryone{(\textit{thoughtfully}):  When it is your turn to say something, the line will be bold, like this.}
 
-\secondarytwo{Authority is constructed ...}
+\secondarytwo{Authority is constructed \ldots}
 
-\secondarythr{... and contextual.}
+\secondarythr{\ldots and contextual.}
 
 \tsdirectionforall{PAUSE 1}
 
@@ -162,7 +208,7 @@ Boxes have \textit{instructions}, which are to be followed but not spoken.
 
 Sometimes there will be instructions like \textit{quickly} or \textit{thoughtfully} about how you should say something.  Try your best, but don't worry about it.
 
-Words that might be hard to pronounce, like the name \textit{Schoenberg}, will have a phonetic pronunciation beside them in square brackets: [SHERN-berg].  The capital letters indicate emphasis.  Give it your best shot, but if you make a mistake, don't worry about it, try again or just move on.  If the audience noticed, they will forget quickly .
+Words that might be hard to pronounce, like the name \textit{Schoenberg}, will have a phonetic pronunciation beside them in square brackets: [SHERN-berg].  The capital letters indicate emphasis.  Give it your best shot, but if you make a mistake, don't worry about it, try again or just move on.  If the audience noticed, they will forget quickly.
 
 ``Fungi'' can be pronounced with a hard or soft \textit{g} and you can say the final \textit{i} so it sounds like ``ee'' or ``aye.''  We like to say it with a hard G so ``fungi'' sounds like ``funky.''
 
@@ -218,13 +264,15 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tstechnical{Q: LX: Lights up.}
 
-\tsdirectionforall{MUSICIAN:  Follow the red line until you are behind the piano, then sit on the piano stool. }
+\directionbox{musician}{Follow the red line until you are behind the piano, then sit on the piano stool.}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-\tsdirectionforall{TERTIARY:  Follow the orange line until you come to stand in a square.  T1 and T2: you will stand.  T3: you may sit or stand, as you choose.}
+\directionbox{tertiaryone}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Stand there.}
+\directionbox{tertiarytwo}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Stand there.}
+\directionbox{tertiarythr}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Sit there.}
 
-\tsdirectionforall{PRIMARY: Follow the purple line.  Stop on the square.}
+\directionbox{primary}{Follow the purple line.  Stop on the square.}
 
 \tsdirectionforall{SECONDARY:  S1: follow the blue line on the right and stop on the X.  S2: follow the green line on the left and stop on the X, then face Primary.  S3: follow the pink tape and stop on the chevrons, then face Primary.}
 
@@ -248,9 +296,9 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tstechnical{R: SLIDE: ``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''}
 
-\primary{[TURN TO FACE THE SCREEN, THEN READ WHILE THE OTHERS MOVE.]}
-
 \tsdirectionforall{While PRIMARY reads: SECONDARY 1, follow the blue line until you are standing on the triangle.  SECONDARY 2, follow the green line until you are at the green triangle.  SECONDARY 3, follow the pink line to the blue line, then stop on the star.}
+
+\directionbox{primary}{Turn to face the screen, then read while the others move.}
 
 \primary{``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''  [PAUSE 1]  Citation?}
 
@@ -282,7 +330,9 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \secondarythr{A lot depends on people.  Information resources don't have to be written down.  If they are written, they're written by people.  They could be on film or audio.  But sometimes they actually \textit{are} people.  We turn to others for information or advice or expertise.}
 
-\primary{[MOVE ALONG THE YELLOW LINE TO THE X, THEN TURN TO FACE THE SCREEN]  Librarians used to think of information literacy as being very much about using computers to do research.  And they had long lists of specific tasks that people should be able to do.  But as they taught information literacy to students in colleges and universities, and as the world changed, they found this approach wasn't the best for:}
+\directionbox{primary}{Move along the yellow line to the X, then turn to face the screen.}
+
+\primary{Librarians used to think of information literacy as being very much about using computers to do research.  And they had long lists of specific tasks that people should be able to do.  But as they taught information literacy to students in colleges and universities, and as the world changed, they found this approach wasn't the best for:}
 
 \tertiaryone{Find.}
 
@@ -388,23 +438,23 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{After four minutes and thirty-three seconds of not playing, he stood up, and the piece was over.  That's the silent piece.}
 
-\secondaryone{Except ... [RAISE ONE FINGER OVER YOUR HEAD]}
+\secondaryone{Except \ldots [RAISE ONE FINGER OVER YOUR HEAD]}
 
 \tsdirectionforall{PAUSE 2}
 
-\secondarytwo{... it's not ... [SHRUG YOUR SHOULDERS]}
+\secondarytwo{\ldots it's not \ldots [SHRUG YOUR SHOULDERS]}
 
 \tsdirectionforall{PAUSE 3}
 
-\secondarythr{(\textit{firmly}) ... silent.}
+\secondarythr{(\textit{firmly}) \ldots silent.}
 
 \tsdirectionforall{PAUSE 4}
 
-\secondaryone{Even though the pianist wasn't playing ... [LOWER YOUR FINGER]}
+\secondaryone{Even though the pianist wasn't playing \ldots [LOWER YOUR FINGER]}
 
-\secondarytwo{... the audience still heard sounds ...}
+\secondarytwo{\ldots the audience still heard sounds \ldots}
 
-\secondarythr{... from themselves, and the room, and the whole environment.}
+\secondarythr{\ldots from themselves, and the room, and the whole environment.}
 
 \primary{There's a famous quote from Cage.  Citation first.}
 
@@ -623,6 +673,8 @@ Radio piece.
 
 John and Yoko.
 
+Brian Eno.
+
 Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \newpage
@@ -707,8 +759,6 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 \secondarytwo{Members would go for walks to find mushrooms to eat, but they also collected them for study.  Cage became the eastern vice-chairman of the People-to-People Committee on Fungi, which brought together mycologists from around the world.}
 
 \secondarythr{He even sometimes sold rare mushrooms to the Four Seasons restaurant in New York.}
-
-
 
 \newpage
 
