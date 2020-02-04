@@ -96,12 +96,12 @@
 \setlength{\fboxrule}{2pt}
 
 % tsdirectionforall = Direction for All
-\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{5pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
 
-\newtoggle{thickbox}
-\ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
+% \newtoggle{thickbox}
+% \ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
 
-  \newtoggle{thick}
+\newtoggle{thick}
 
 % directionbox
 %\newcommand{\directionbox}[1]{\setlength{\fboxrule}{\directionboxweight{}}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
@@ -202,7 +202,7 @@ Boxes have \textit{instructions}, which are to be followed but not spoken.
 
 \subsection{Pauses}
 
-[PAUSE 1] means pause for a count of one, which you might time by saying to yourself, ``One one thousand.''.  [PAUSE 2] means pause for a count of two, which you might time by saying to yourself, ``One one thousand, two one thousand.''  [PAUSE 5], you can see, would be a long pause where you count up to 5.  Don't rush a pause.  The audience will wait for you.
+\direction{Pause 1} means pause for a count of one, which you might time by saying to yourself, ``One one thousand.''.  \direction{Pause 2} means pause for a count of two, which you might time by saying to yourself, ``One one thousand, two one thousand.''  \direction{Pause 5}, you can see, would be a long pause where you count up to 5.  Don't rush a pause.  The audience will wait for you.
 
 \subsection{Pronunciation}
 
@@ -216,7 +216,11 @@ The John Cage composition \textit{4' 33''} should always be pronounced in full a
 
 \subsection{For the musician}
 
-We use the piano to help indicate when a new section begins.  When you see the instruction PLAY A NOTE, do this:  pick any key on the piano (black or white, but not from too high on the right, because those high sounds won't resonate as long), hit it hard, and keep pressing the key down until you can no longer hear any sound from it, even if performers start talking.  When you can't hear the note any more, wait a few more seconds to be sure, then lift your finger up.  Then wait for the next scenario.
+We use the piano to help indicate when a new section begins.  You will see these instructions:
+
+\directionbox{musician}{Play a note.}
+
+To play a note, do this:  pick any key on the piano (black or white, but not from too high on the right, because those high sounds won't resonate as long), hit it hard, and keep the key down until you can no longer hear any sound from it, even if performers start talking.  When you can't hear the note any more, wait a few more seconds to be sure, then lift your finger up.  Then wait for the next scenario.
 
 \newpage
 
@@ -268,21 +272,29 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \directionbox{musician}{Play a note.}
 
+\tsdirectionforall{All these next movements happen at the same time.}
+
 \directionbox{tertiaryone}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Stand there.}
+
 \directionbox{tertiarytwo}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Stand there.}
+
 \directionbox{tertiarythr}{Moving with the other tertiaries, follow the orange line until you come to your marked position.  Sit there.}
 
 \directionbox{primary}{Follow the purple line.  Stop on the square.}
 
-\tsdirectionforall{SECONDARY:  S1: follow the blue line on the right and stop on the X.  S2: follow the green line on the left and stop on the X, then face Primary.  S3: follow the pink tape and stop on the chevrons, then face Primary.}
+\directionbox{secondaryone}{Follow the blue line on the right and stop on the X.}
+
+\directionbox{secondarytwo}{Follow the green line on the left and stop on the X, then face Primary.}
+
+\directionbox{secondarythr}{Follow the pink tape and stop on the chevrons, then face Primary.}
 
 \tsdirectionforall{When you have arrived at your position, wait for the note from the piano to stop.}
 
-\tsdirectionforall{PRIMARY:  When you can no longer hear the piano, wait one more second.  Slowly raise your arms over your head, then slowly lower them back to your sides.}
+\directionbox{primary}{When you can no longer hear the piano, wait one more second.  Slowly raise your arms over your head, then slowly lower them back to your sides.}
 
-\tsdirectionforall{SECONDARY and TERTIARY:  Copy Primary's arm movements as best you can.}
+\tsdirectionforall{Everyone else copy Primary's arm movements as best you can.}
 
-\primary{[PAUSE 1] Good evening, everyone.  This show is about a concept from the field of library and information science.  The concept is:  \textit{Authority is constructed and contextual.} }
+\primary{\direction{Pause 1} This show is about a concept from the field of library and information science.  The concept is:  \textit{Authority is constructed and contextual.} }
 
 \tstechnical{R: SLIDE: ``Authority is constructed and contextual.''}
 
@@ -300,7 +312,7 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \directionbox{primary}{Turn to face the screen, then read while the others move.}
 
-\primary{``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''  [PAUSE 1]  Citation?}
+\primary{``Information literacy is the set of integrated abilities encompassing the reflective discovery of information, the understanding of how information is produced and valued, and the use of information in creating new knowledge and participating ethically in communities of learning.''  \direction{Pause 1}  Citation?}
 
 \tertiaryone{Association of College and Research Libraries.}
 
@@ -368,45 +380,61 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \secondarythr{---and contextual.}
 
-[PAUSE 1]
+\tsdirectionforall{Pause 1}
 
-\primary{And to help us, we're going to use an example. [WALK BACK ALONG YELLOW TAPE, CROSS TO THE GREEN SQUARE, THEN STOP AND FACE CENTRE.]}
+\primary{And to help us, we're going to use an example.}
 
-\secondaryone{[FOLLOW THE BLUE LINE AND STOP ON THE CHEVRONS.  FACE THE STAGE.]}
+\directionbox{primary}{Walk back along yellow tape, cross to the green square, then stop and face centre.}
 
-\secondarytwo{[FOLLOW THE GREEN LINE TO THE X.  CROSS TO THE PINK X.]}
+\directionbox{secondaryone}{Follow the blue line and stop on the chevrons.  Face the stage.}
 
-\secondarythr{[FOLLOW THE BLUE LINE AND STOP ON THE BLUE SQUARE.  FACE THE CENTRE.]}
+\directionbox{secondarytwo}{Follow the green line to the X.  Cross to the pink X.}
+
+\directionbox{secondarythr}{Follow the blue line and stop on the blue square.  Face the centre.]}
 
 \newpage
 
 \subsection{Scenario 2: John Cage (3 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
 \tsdirectionforall{PAUSE 4}
 
-\primary{To help us, we're going to use an example.  A person.  Someone from the arts. [PAUSE 1.]  John Cage.}
+\primary{To help us, we're going to use an example.  Not about politics or climate change.  An artist.  A musician.  \direction{Pause 1}  John Cage.}
 
 \tstechnical{R: SLIDE: Photo of John Cage.}
 
 \tsdirectionforall{SECONDARY:  Face the screen with your bodies.}
 
-\primary{[GESTURE AT THE SECONDARY GROUP TO DIRECT ATTENTION TO THEM.]  Biography?}
+\directionbox{primary}{Gesture at the secondary group to direct attention to them.}
 
-\secondaryone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.  [TURN ONE QUARTER TO THE RIGHT.]}
+\primary{Biography.}
 
-\secondarytwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.  [TURN ONE-QUARTER TO THE RIGHT.]}
+\secondaryone{John Milton Cage Jr. was an American composer.  He was born in Los Angeles in 1912 and died in New York in 1992.  He studied briefly under composer Arnold Schoenberg [SHERN-berg].  In the early 1940s, he moved to New York, where he met Marcel Duchamp [mar-SELL doo-SHOMP] and other artists.}
+
+\directionbox{secondaryone}{Turn one quarter to the right.}
+
+\secondarytwo{He played chess with Duchamp.  There's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies ran the production of ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.}
+
+\directionbox{secondarytwo}{Turn one-quarter to the right.}
 
 \tstechnical{R: SLIDE: Donald Gillies.}
 
-\secondarythr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce [MURSE] Cunningham, a dancer and choreographer.   [TURN ONE-QUARTER TO THE LEFT.]}
+\secondarythr{Cage married in his early twenties, but divorced his wife in 1945 and spent the rest of his life with Merce [MURSE] Cunningham, a dancer and choreographer.}
 
-\secondaryone{He used chance in his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.  He also used silence.  [FACE THE CENTRE.]}
+\directionbox{secondarythr}{Turn one-quarter to the left.}
 
-\secondarytwo{He was friends with visual artists like Robert Rauschenberg [ROWSH-en-berg].  They once made a work together called ``Automobile Tire Print.''  Rauschenberg taped twenty sheets of typing paper together in a long line.  He put it out on the street.  Cage drove through a pool of black paint and then drove over the strip of paper as straight as he could.  Rauschenberg said Cage ``was the printer and the press.''  [FACE THE CENTRE.]}
+\secondaryone{He used chance in his work.  These are ``aleatory'' [AYE-lee-uh-tory] compositions.  He would often roll dice to determine what would happen next.  He used the \textit{I Ching} [EE CHING] as a compositional tool.  He also used silence.}
 
-\secondarythr{He was a Zen Buddhist.  He laughed a lot.  He organized the first Happenings.  He was a mushroom expert: a mycologist [my-COLL-o-jist].  He composed music for Merce's dances.   [FACE THE CENTRE.]}
+\directionbox{secondaryone}{Face the centre.}
+
+\secondarytwo{He was friends with visual artists like Robert Rauschenberg [ROWSH-en-berg].  They once made a work together called ``Automobile Tire Print.''  Rauschenberg taped twenty sheets of typing paper together in a long line.  He put it out on the street.  Cage drove through a pool of black paint and then drove over the strip of paper as straight as he could.  Rauschenberg said Cage ``was the printer and the press.''}
+
+\directionbox{secondarytwo}{Face the centre.}
+
+\secondarythr{He was a Zen Buddhist.  He laughed a lot.  He organized the first Happenings.  He was a mushroom expert: a mycologist [my-COLL-o-jist].  He composed music for Merce's dances.}
+
+\directionbox{secondarythr}{Face the centre.}
 
 \tertiaryone{Chance.}
 
@@ -422,7 +450,13 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tsdirectionforall{PAUSE 2}
 
-\primary{Cage is best known for his silent piece.  That's \textit{4' 33''} [four minutes and thirty-three seconds].  [CROSS TO THE YELLOW TAPE AND STOP ON THE X.]  This is the score.  [GESTURE OVERHEAD.]}
+\primary{Cage is best known for his silent piece.  That's \textit{4' 33''} [four minutes and thirty-three seconds].}
+
+\directionbox{primary}{Cross to the yellow tape and stop on the X.}
+
+\primary{This is the score.}
+
+\directionbox{primary}{Gesture overhead.}
 
 \tstechnical{R: SLIDE: Show the score.}
 
@@ -438,19 +472,25 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{After four minutes and thirty-three seconds of not playing, he stood up, and the piece was over.  That's the silent piece.}
 
-\secondaryone{Except \ldots [RAISE ONE FINGER OVER YOUR HEAD]}
+\secondaryone{Except \ldots}
 
-\tsdirectionforall{PAUSE 2}
+\directionbox{secondaryone}{Raise one finger over your head.}
 
-\secondarytwo{\ldots it's not \ldots [SHRUG YOUR SHOULDERS]}
+\tsdirectionforall{Pause 2.}
 
-\tsdirectionforall{PAUSE 3}
+\secondarytwo{\ldots it's not \ldots}
+
+\directionbox{secondarytwo}{Shrug your shoulders.}
+
+\tsdirectionforall{Pause 3.}
 
 \secondarythr{(\textit{firmly}) \ldots silent.}
 
-\tsdirectionforall{PAUSE 4}
+\tsdirectionforall{Pause 4.}
 
-\secondaryone{Even though the pianist wasn't playing \ldots [LOWER YOUR FINGER]}
+\secondaryone{Even though the pianist wasn't playing \ldots}
+
+\directionbox{secondaryone}{Lower your finger.}
 
 \secondarytwo{\ldots the audience still heard sounds \ldots}
 
@@ -464,25 +504,25 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tertiarythr{2003.}
 
-\primary{The quote is [PAUSE 1]: ``There's no such thing as silence.''}
+\primary{The quote is \direction{Pause 1}: ``There's no such thing as silence.''}
 
 \tsdirectionforall{SECONDARY and TERTIARY: Give an exaggerated shrug and knowing wink to an audience member of your choice.}
 
-\secondaryone{[FOLLOW THE BLUE LINE TO THE PINK LINE AND STOP ON THE X.]}
+\directionbox{secondaryone}{Walk the blue line to the pink line and stop on the X.}
 
-\secondarytwo{[FOLLOW THE PINK LINE TO THE BLUE LINE AND STOP ON THE X.]}
+\directionbox{secondarytwo}{Walk the pink line to the blue line and stop on the X.}
 
-\secondarythr{[FOLLOW THE BLUE LINE TOWARDS THE SCREEN, THEN CROSS TO THE YELLOW AND WALK TO THE X.]}
+\directionbox{secondarythr}{Walk the blue line towards the screen, then cross to the yellow line and walk to the X.}
 
-\primary{[CROSS TO THE PINK LINE, THEN WALK TO SCREEN, BLUE LINE, STAND ON CHEVRONS.]}
+\directionbox{primary}{Cross to the pink line, then walk on the blue line towards the screen, and stop on the chevrons.}
 
 \newpage
 
 \subsection{Scenario 3: Authority is Constructed and Contextual (5 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
 \primary{Back to the concept.}
 
@@ -494,7 +534,7 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \secondarythr{---and contextual.}
 
-[PAUSE 1]
+\tsdirectionforall{Pause 1.}
 
 \tertiaryone{Authority.}
 
@@ -502,7 +542,7 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tertiarythr{Contextual.}
 
-[PAUSE 1]
+\tsdirectionforall{Pause 1.}
 
 \primary{This is the concept in question.  This is the \textit{frame} we are going to try to understand.  Let's look at the definition.}
 
@@ -526,13 +566,13 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \tertiarythr{2015.}
 
-\primary{[FACE THE PIANO.]}
+\directionbox{primary}{Face the piano.}
 
-\secondaryone{[FACE THE PIANO.]}
+\directionbox{secondaryone}{Face the piano.}
 
-\secondarytwo{[FACE THE PIANO.]}
+\directionbox{secondarytwo}{Face the piano.}
 
-\secondarythr{[FACE THE PODIUM.]}
+\directionbox{secondarythr}{Face the podium.}
 
 \tstechnical{R: SLIDE: Show ``Information resources reflect'' paragraph with first line bold: ``Information resources reflect their creators’ expertise and credibility, and are evaluated based on the information need and the context in which the information will be used.''}
 
@@ -586,7 +626,7 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \secondarythr{They will be aware of their own attitudes and biases.}
 
-[PAUSE 1]
+\tsdirectionforall{Pause 1.}
 
 \primary{Now the beginning is in place.  We know about information literacy.}
 
@@ -612,21 +652,21 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{Now we go back to our example.}
 
-\primary{[FOLLOW THE BLUE LINE TO THE PODIUM, STAND ON ORANGE CHEVRONS.]}
+\directionbox{primary}{Follow the blue line to the podium; stand on the orange chevrons.}
 
-\secondaryone{[FOLLOW THE PINK LINE TO THE PINK CHEVRONS.]}
+\directionbox{secondaryone}{Walk the pink line to the pink chevrons.}
 
-\secondarytwo{[FOLLOW THE BLUE LINE TO THE GREEN LINE, THEN STOP ON THE TRIANGLE.]}
+\directionbox{secondarytwo}{Walk the blue line to the green line, then stop on the triangle.}
 
-\secondarythr{[CROSS TO THE PINK LINE AND STOP ON THE X.]}
+\directionbox{secondarythr}{Cross to the pink line and stop on the X.}
 
 \newpage
 
 \subsection{Scenario 4: Cage and Music (3 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
 \primary{John Cage.}
 
@@ -646,44 +686,54 @@ We use the piano to help indicate when a new section begins.  When you see the i
 
 \primary{We start with his music.  We saw the score of \textit{4' 33''}:  three movements where the pianist does not play the piano.  This is Cage's most famous work, by far.  If someone knows one thing about Cage, they know he composed a work of music where there is no music.  That is a challenging idea.  People have different opinions about it.  We will talk about that soon.  But in that piece, in two hundred and seventy-three seconds (plus time between movements) Cage put forward an idea about an entirely new way of thinking about music.}
 
-He arrived at it through years of work.  There was a lot of thought and intent behind it.  Even though his music could sound wild and difficult, it was made with care and deliberation.  He knew what he was doing.  And through his life he kept changing what he was doing.
+\secondaryone{He arrived at it through years of work.  There was a lot of thought and intent behind it.  Even though his music could sound wild and difficult, it was made with care and deliberation.  He knew what he was doing.  And through his life he kept changing what he was doing.}
 
-Cage began to study and compose music in the early 1930s.  In 1935 he under the composer Arnold Schoenberg, who was impressed with Cage's work and soon let him join a special class on counterpoint that had only two other students.  Cage soon moved on, and taught at colleges and composed percussion music.  One of his pieces, ``Third Construction,'' is still commonly performed by percussion ensembles today.
+\secondarytwo{Cage began to study and compose music in the early 1930s.  Early on he studied under the composer Arnold Schoenberg, who was impressed with Cage's work.  However, harmony was important to Schoenberg but not to Cage, and he soon moved on.  One of his early percussion pieces, ``Third Construction,'' is still commonly performed by ensembles today.}
 
-He invented the prepared piano.  By putting screws and bolts and weather stripping between the strings of a piano, when the keys are hit the sound produced is very different from a normal piano.  Cage said it was ``a percussion ensemble under the control of a single player.''
+\secondarythr{He invented the prepared piano.  By putting screws and bolts and weather stripping between the strings of a piano, when the keys are hit the sound produced is very different from a normal piano.  Cage said it was ``a percussion ensemble under the control of a single player.''}
 
-hard work
-good luck
-enormous talent
+\primary{This all sounds rather long, and will be broken up differently.  There will be one or two quotes from Cage about his approach to sound and music.}
+
+% hard work
+% good luck
+% enormous talent
 
 % His work was appreciated and he was becoming known.  In Chicago he met the surrealist painter Max Ernst, who invited him to come to New York and stay with him and his wife, Peggy Guggenheim.   Cage and his wife moved there and he had more success.  In 1942 he began to work with choreographer Merce Cunningham, and in 1943 he left his wife for him.  He would compose music for Merce's dances for the rest of his life.
 
-It was in New York that Cage met Marcel Duchamp and other artists.  He would
+% It was in New York that Cage met Marcel Duchamp and other artists.  He would
 
-Marcel Duchamp.  Joseph Albers.  Buckminster Fuller.  Joseph Campbell.
-Willem de Kooning.  Robert Rauschenberg.
-Virgil Thomson.  Pierre Boulez.  Morton Feldman.
-Cage introduced Pierre Boulez to Aaron Copeland (in Paris)
+% Marcel Duchamp.  Joseph Albers.  Buckminster Fuller.  Joseph Campbell.
+% Willem de Kooning.  Robert Rauschenberg.
+% Virgil Thomson.  Pierre Boulez.  Morton Feldman.
+% Cage introduced Pierre Boulez to Aaron Copeland (in Paris)
 
-I Ching.
+% I Ching.
 
-4' 33''
+% 4' 33''
 
-Radio piece.
+% Radio piece.
 
-John and Yoko.
+% John and Yoko.
 
-Brian Eno.
+% Brian Eno.
 
-Nono p. 160 Conversing. Critivcal of Cage's poloitics
+% Nono p. 160 Conversing. Critivcal of Cage's poloitics
+
+\secondaryone{I will say something about all the people he worked with, the Happenings, people he influenced.  Major names..}
+
+\secondarytwo{I will mention the books he wrote, and all the books and documentaries about him.}
+
+\secondarythr{I will mention awards, CDs, the John Cage Trust.  General impact now.}
+
+\primary{You may never have heard anything composed by John Cage.  You will probably never hear his music without making an effort to go find it.  Other twentieth-century composers, like Duke Ellington, Dmitri Shostakovich or Benjamin Britten, are much more likely to turn up on the radio or at a performance.  Even so, there's no denying he was a major figure in twentieth century music.  Now that we have a sense of that, we move on to mushrooms.}
 
 \newpage
 
 \subsection{Scenario 5: Cage and Mushrooms (6 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
 \primary{John Cage became interested in mushrooms in 1954, when he was staying at a farmhouse in New York State.  He said:}
 
@@ -716,11 +766,15 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \secondarythr{Finally he was asked to list the twenty-four types of white-spore mushrooms given in a standard text.  Cage said, ``I can enumerate the list alphabetically,'' and then did so.}
 
-\primary{Cage later said, ``That was the first consequential amount of money I'd ever earned.  It was two years later, in 1960, that I began to make some money with my music.''  [PAUSE 1] Mushrooms became a regular part of Cage's music and writing.  We are going to hear two stories from his 1959 work \textit{Indeterminacy}.  This is a set of ninety stories, some short, some long, each meant to be read, quickly or slowly, so that it lasts exactly one minute.}
+\primary{Cage later said, ``That was the first consequential amount of money I'd ever earned.  It was two years later, in 1960, that I began to make some money with my music.''}
 
-\secondarythr{My two colleagues are now going to perform ``Mushroom Verbatim.''  One after the other, they are going to put on those headphones and repeat what they hear.  Speaking what you are hearing, without preparation, is not easy, so we will forgive them any mistakes.  First, story number sixty-six.}
+\tsdirectionforall{Some action here.}
 
-\tsdirectionforall{S1:  Cross to the plinth and stand in front of the chair.  Put your binder down on it, face open so that you can see these words. Put on the headphones.  Look up at the Viking ship above the stage.  When you are ready, nod your head a little bit.  You will hear a story.  Repeat what you hear.}
+\primary{Mushrooms became a regular part of Cage's music and writing.  We are going to hear two stories from his 1959 work \textit{Indeterminacy}.  This is a set of ninety stories, some short, some long, each meant to be read, quickly or slowly, so that it lasts exactly one minute.}
+
+\secondarythr{My two colleagues are now going to perform ``Mushroom Verbatim.''  One after the other, they are going to put on those headphones and repeat what they hear.  It is not easy to repeat what you are hearing, without preparation.  We will forgive them any mistakes.  First, story number sixty-six.}
+
+\tsdirectionforall{S1:  Cross to the plinth and stand in front of the chair.  Put your binder down on it, face open so that you can see these words. Put on the headphones.  When you are ready, nod your head a little bit.  You will hear a story.  Repeat what you hear.   Look up at the Viking ship above the stage while you are speaking.}
 
 \tsdirectionforall{While the Mushroom Verbatim is happening, look at the speaker.}
 
@@ -730,7 +784,7 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \primary{Next, story number sixty.}
 
-\tsdirectionforall{S2:  Cross to the plinth and stand in front of the chair.  Put your binder down on it, face open so that you can see these words. Put on the headphones.  Look up at the Viking ship above the stage.  When you are ready, nod your head a little bit.  You will hear a story.  Repeat what you hear.}
+\tsdirectionforall{S2:  Cross to the plinth and stand in front of the chair.  Put your binder down on it, face open so that you can see these words. Put on the headphones.  When you are ready, nod your head a little bit.  You will hear a story.  Repeat what you hear.  Look up at the Viking ship above the stage while you are speaking.}
 
 \tsdirectionforall{While the Mushroom Verbatim is happening, look at the speaker.}
 
@@ -740,11 +794,11 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \newpage
 
-\subsection{Scenario 6: Conclusion? (5 min)}
+\subsection{Scenario 6: Cage and authority (5 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
 \primary{Cage was an expert on mushrooms, but he wasn't \textit{just} an expert.  He was also an \textit{authority}, which is different.  Someone can be an expert without being an \textit{authority}.}
 
@@ -754,45 +808,155 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \tertiarythr{Contextual.}
 
-\secondaryone{Cage began teaching mushroom identification at the New School in New York.  This led to him helping to found the New York Mycological Society, which is still in operation.}
+\secondaryone{Cage began teaching mushroom identification at the New School in New York.  This led to him helping to found the New York Mycological Society, which is still in operation.  Members would go for walks to find mushrooms to eat, but they also collected them for study.  }
 
-\secondarytwo{Members would go for walks to find mushrooms to eat, but they also collected them for study.  Cage became the eastern vice-chairman of the People-to-People Committee on Fungi, which brought together mycologists from around the world.}
+\secondarytwo{Cage became the eastern vice-chairman of what became the North American Mycological Association.}
 
 \secondarythr{He even sometimes sold rare mushrooms to the Four Seasons restaurant in New York.}
+
+\primary{As an amateur mycologist, Cage was an \textit{authority} on mushrooms.  Definition again, please.}
+
+\tertiaryone{``Information resources reflect their creators’ expertise and credibility, and are evaluated based on the information need and the context in which the information will be used.''}
+
+\secondaryone{We know about his expertise and his credibility.  As for information needs, if you wanted to know about mushrooms, perhaps while out in the forest, he would be a great person to ask.}
+
+\tertiarytwo{``Authority is constructed in that various communities may recognize different types of authority.''}
+
+\secondarytwo{He was recognized by other mushroom lovers and researchers for his knowledge and his work in organizations like the New York Mycological Society.  He won awards for it.}
+
+\tertiarythr{``It is contextual in that the information need may help to determine the level of authority required.''}
+
+\secondarythr{If you needed a genetic analysis of a fungus, you'd go to a researcher in a lab.  But if you needed to identify a mushroom you'd found in the forest, he could do it.  He could tell you if it was poisonous or not.  You could trust John Cage to stop you from dying from mushroom poisoning.}
+
+\primary{That's authority.  It's constructed, it's contextual, but he's an authority on mushrooms.  But what about music?  The construction and context of the authority there is very different.}
+
+\primary{John Rockwell.}
+
+\secondaryone{``Under Mr. Cage's benign influence, younger composers felt free to be free, to dispense with presuppositions about what music is and music be and to explore where their instincts and interests and modern technology took them.''}
+
+\secondarytwo{``The result has been a lot of trivial trash, of course, but there have also been some masterpiece---usually sounding totally unlike Mr.~Cage's own music, healthily enough---and even whole movements (Minimalism, most prominently) that owe their very existence to Mr.~Cage's liberating example.''}
+
+\secondarythr{``Curiously, however, that example has been conveyed primarily through Mr.~Cage's writings (above all the seminal collection \textit{Silence} of 1961 \ldots) and the general example of his personality.''}
+
+\primary{Citation.}
+
+\tertiaryone{John Rockwell.  Or something expressing the same idea.}
+
+\tertiarytwo{``The Impact and Influence of John Cage'', in \textit{The New York Times}.}
+
+\tertiarythr{1987.}
+
+\primary{That article was written when a new series of recordings of Cage's music was being released.  But it quotes Cage: ``I myself do not use records.  I just listen to the sounds around wherever I happen to be.'' \direction{Pause 2}  As noted, Cage's life and writings are more influential that his musical methods.  Here is a quote from the autobiography of composer Philip Glass.}
+
+\primary{Philip Glass.}
+
+\secondaryone{``The book \textit{Silence} was in my hands not long after it came out, and I would spend time with [two friends] talking and thinking about it.  As it turned out, it became a way that we could look at what Jasper Johns, Robert Rauschenberg, Richard Serra or almost anybody from our generation or the generation before us did, and we could understand it in terms of how the work existed in the world.''}
+
+\secondarytwo{``The accepted idea when I was growing up was that the late Beethoven quartets or \textit{The Art of the Fugue} or any of the great masterpieces had a platonic identity---that they had an actual, independent existence.  What Cage was saying is that there is no such thing as an independent existence.''}
+
+\secondarythr{``The music exists between you---the listener---and the object you're listening to.  The transaction of it coming into being happens through the effort you make in the presence of that work.  The cognitive activity is the content of the work.''}
+
+\primary{Citation.}
+
+\tertiaryone{Philip Glass.}
+
+\tertiarytwo{\textit{Words Without Music}.}
+
+\tertiarythr{2015.}
+
+\primary{Opposing ideas.  People who have no time for Cage at all.}
+
+\secondaryone{I will say something.}
+
+\secondarytwo{I will say something.}
+
+\secondarythr{And I will say something, probably quoting Cage.}
+
+\primary{Kyle Gann.}
+
+\secondaryone{``Yet how to explain the fact that, for hundreds of composers, Cage remains once of the central musical figures of the mid-twentieth century, if not \textit{the} central one? \ldots  For thousands trained in American conservatories, Cage is merely a historical irritant, a charlatan against whom their teachers warned them.''}
+
+\secondarytwo{``For another type, Cage is a model, a basic paradigm for a composer's life.  In America, this is probably the most reliable distinction between what is called the Uptown composer (Uptown as in Manhattan) and the Downtown composer.  Uptown composers mention Cage with anger or contempt or condescension; Downtown composers talk of him with reverence, respect, and seriousness.''}
+
+\secondarythr{``Perhaps no other composer in history elicits such extremes of approval and disapproval.''}
+
+\primary{Citation.}
+
+\tertiaryone{Kyle Gann.}
+
+\tertiarytwo{``No Escape from Heaven: John Cage as Father Figure,'' in \textit{The Cambridge Companion to John Cage}.}
+
+\tertiarythr{2002.}
+
+\primary{More discussion here.}
+
+\secondaryone{A quote from Cage.}
+
+\primary{Something here.}
+
+\secondarytwo{A quote from Cage.}
+
+\primary{Something here.}
+
+\secondarythr{A quote from Cage.}
+
+\primary{And I will wrap it up, asking the audience to decide for themselves if Cage's approach to music is something worth considering and pursuing.  They can start tonight.}
 
 \newpage
 
 \subsection{Scenario 7: 4' 33'' (6 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
 \tsdirectionforall{Instructions on where to move.}
 
 \secondaryone{Now we will have a performance of \textit{4' 33''}.}
 
-\secondarytwo{The performers will be three of us, the three of them up on stage, and the musician at the piano.}
+\secondarytwo{The performers will be three of us, and the three of them up on stage, and the musician at the piano.}
 
 \secondarythr{The conductor will listen to recorded instructions on headphones.  There are three movements, with a brief pause between.}
 
-\tsdirectionforall{Put down your score and pay attention to PRIMARY, who will conduct.}
+\tertiaryone{In the first movement, we won't play an instrument.}
 
-\primary{[Go the plinth in the centre of the Great Hall.  Put down your score.  Pick up the headphones and put them on.  Follow the instructions you hear.  If you cannot hear anything after a few seconds, raise a hand and look for someone in a white lab coat.]}
+\tertiarytwo{In the second movement, we won't play an instrument.}
 
-\tstechnical{Audio file runs about 5m40s total, with instructions and gaps between movements.}
+\tertiarythr{In the third movement, we won't play an instrument.}
 
-\tsdirectionforall{When the piece is over, wait until the audience has reacted and had time to cough and move.  Wait until the room is quiet again.}
+\tsdirectionforall{Put your score on the floor in front of you, face up.  Sit up straight and pay close attention to PRIMARY, who will conduct.  Do not do anything.  Just pay attention and listen.}
+
+\directionbox{primary}{Go the plinth in the centre of the hall.  Stand facing the stage with the chair just in front of you.  Put your score down on the chair, face up.  Pick up the headphones and put them on.  When you are ready, nod your head a little bit.  Follow the instructions you hear.  If you cannot hear anything after a few seconds, raise a hand and look for someone in a white lab coat.}
+
+\tstechnical{Play audio file X.  It runs about 5m40s total, with instructions and gaps between movements.}
+
+\tsdirectionforall{When the piece is over, give the audience time to react.  Wait until the room is quiet again.}
 
 \newpage
 
 \subsection{Coda (1 min)}
 
-\musician{[PLAY A NOTE.]}
+\directionbox{musician}{Play a note.}
 
-[PAUSE 4]
+\tsdirectionforall{Pause 4.}
 
-\primary{Thank you.}
+\primary{Begin to close.}
+
+\secondaryone{A remark.}
+
+\secondarytwo{A remark.}
+
+\secondarythr{A remark.}
+
+\tertiaryone{Authority.}
+
+\tertiarytwo{Constructed.}
+
+\tertiarythr{Contextual.}
+
+\tstechnical{LX: Lights down.}
+
+\tsdirectionforall{Movement instructions for everyone.}
 
 \newpage
 
@@ -800,7 +964,7 @@ Nono p. 160 Conversing. Critivcal of Cage's poloitics
 
 \tsdirectionforall{What to do for the curtain call.}
 
-\tstechnical{LX: Lights down.  House lights to full.}
+\tstechnical{LX: House lights to full.}
 
 \newpage
 
