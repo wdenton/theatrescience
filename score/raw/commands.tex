@@ -1,0 +1,61 @@
+\newcommand{\blankspace}{\_\_\_\_\_\_\_\_}
+
+\newcommand{\performerletter}[1]{%
+  \ifthenelse{\equal{#1}{audience}}{A}{}%
+  \ifthenelse{\equal{#1}{musician}}{M}{}%
+  \ifthenelse{\equal{#1}{primary}}{P}{}%
+  \ifthenelse{\equal{#1}{secondaryone}}{S1}{}%
+  \ifthenelse{\equal{#1}{secondarytwo}}{S2}{}%
+  \ifthenelse{\equal{#1}{secondarythr}}{S3}{}%
+  \ifthenelse{\equal{#1}{tertiaryone}}{T1}{}%
+  \ifthenelse{\equal{#1}{tertiarytwo}}{T2}{}%
+  \ifthenelse{\equal{#1}{tertiarythr}}{T3}{}%
+}
+
+\newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
+\newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{P: #1}}{P: #1}}
+\newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{S1: #1}}{S1: #1}}
+\newcommand{\secondarytwo}[1]{\ifthenelse{ \equal{\speaker}{secondarytwo}}{\textbf{S2: #1}}{S2: #1}}
+\newcommand{\secondarythr}[1]{\ifthenelse{ \equal{\speaker}{secondarythr}}{\textbf{S3: #1}}{S3: #1}}
+\newcommand{\tertiaryone}[1]{ \ifthenelse{ \equal{\speaker}{tertiaryone} }{\textbf{T1: #1}}{T1: #1}}
+\newcommand{\tertiarytwo}[1]{ \ifthenelse{ \equal{\speaker}{tertiarytwo} }{\textbf{T1: #1}}{T2: #1}}
+\newcommand{\tertiarythr}[1]{ \ifthenelse{ \equal{\speaker}{tertiarythr} }{\textbf{T1: #1}}{T3: #1}}
+
+% \ifthenelse{\equal{\speaker}{musician}}{%
+%   \newcommand{\directionboxweight}{5pt}
+% }{%
+%   \newcommand{\directionboxweight}{1pt}
+% }
+
+% Stage directions are in small caps.
+\newcommand{\direction}[1]{[\textsc{\lowercase{#1}}]}
+
+% Box formatting, so they have nice lines and are well padded
+\setlength{\fboxsep}{1em}
+\setlength{\fboxrule}{2pt}
+
+% tsdirectionforall = Direction for All
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{5pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+
+% \newtoggle{thickbox}
+% \ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
+
+\newtoggle{thick}
+
+% directionbox
+%\newcommand{\directionbox}[1]{\setlength{\fboxrule}{\directionboxweight{}}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+\newcommand{\directionbox}[2]{
+  \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thick}}{\togglefalse{thick}}
+  % \toggletrue{thick}
+  % \ifthenelse{\equal{musician}{musician}{\toggletrue{thick}}{\togglefalse{thick}}}
+  % \setlength{\fboxrule}{\ifthenelse{\equal{#1}{\speaker}}{5pt}{1pt}}%
+  %\setlength{\fboxrule}{\ifthenelse{\equal{\speaker}{#1}}{5pt}{1pt}}%
+  \setlength{\fboxrule}{\iftoggle{thick}{5pt}{1pt}}%
+  \vspace{0.5\baselineskip}%
+  \fbox{\parbox{0.9\textwidth}{\iftoggle{thick}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
+  \setlength{\fboxrule}{1pt}%
+  \vspace{0.5\baselineskip}
+}
+
+% tstechnical = Technical direction
+\newcommand{\tstechnical}[1]{\dbox{\vspace{0.5\baselineskip}\parbox{0.9\textwidth}{\textit{#1}}}\vspace{0.5\baselineskip}}
