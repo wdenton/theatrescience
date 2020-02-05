@@ -35,7 +35,7 @@
 \setlength{\fboxrule}{2pt}
 
 % tsdirectionforall = Direction for All
-\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{3pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.5\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
 
 % \newtoggle{thickbox}
 % \ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
@@ -50,7 +50,7 @@
   % \ifthenelse{\equal{musician}{musician}{\toggletrue{thick}}{\togglefalse{thick}}}
   % \setlength{\fboxrule}{\ifthenelse{\equal{#1}{\speaker}}{5pt}{1pt}}%
   %\setlength{\fboxrule}{\ifthenelse{\equal{\speaker}{#1}}{5pt}{1pt}}%
-  \setlength{\fboxrule}{\iftoggle{thick}{3pt}{1pt}}%
+  \setlength{\fboxrule}{\iftoggle{thick}{2pt}{1pt}}%
   \vspace{0.5\baselineskip}%
   \fbox{\parbox{0.9\textwidth}{\iftoggle{thick}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
   \setlength{\fboxrule}{1pt}%
