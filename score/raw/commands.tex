@@ -63,3 +63,27 @@
 \newcommand{\playanote}{\directionbox{musician}{When the others have stopped, play a note.}}
 
 \newcommand{\notewait}{\directionbox{primary}{Wait until the note is gone.}}
+
+% \newcommand{\pronounce}[2]{«\dashuline{#2} #1»} % « »
+\newcommand{\pronounce}[2]{#1 «~\dashuline{#2}~»} % « »
+
+% Bib formatting
+%
+% This lets me use a {mybiblist} environment to list the bibliographies,
+% which are then formatted to look Chicago style.
+% Taken from https://tex.stackexchange.com/q/148801/13866
+\newenvironment{mybiblist}{%
+  % \fontsize{10}{12}\selectfont
+  % \footnotesize
+  \begin{list}{}{%
+      \setlength{\itemindent}{-2em}%%'
+      \setlength{\leftmargin}{2em}%%'
+      \setlength{\itemsep}{0pt}%%'
+      \setlength{\parsep}{\parskip}%%'
+      \setlength{\topsep}{\parskip}%%'
+    }%
+    \setlength{\parindent}{-2em}%%
+  \item[]
+  }
+  {\end{list}
+}
