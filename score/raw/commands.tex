@@ -4,12 +4,16 @@
   \ifthenelse{\equal{#1}{audience}}{A}{}%
   \ifthenelse{\equal{#1}{musician}}{M}{}%
   \ifthenelse{\equal{#1}{primary}}{P}{}%
+  \ifthenelse{\equal{#1}{q}}{Q}{}%
+  \ifthenelse{\equal{#1}{r}}{R}{}%
   \ifthenelse{\equal{#1}{secondaryone}}{S1}{}%
   \ifthenelse{\equal{#1}{secondarytwo}}{S2}{}%
   \ifthenelse{\equal{#1}{secondarythr}}{S3}{}%
+  \ifthenelse{\equal{#1}{tertiary}}{T}{}%
   \ifthenelse{\equal{#1}{tertiaryone}}{T1}{}%
   \ifthenelse{\equal{#1}{tertiarytwo}}{T2}{}%
   \ifthenelse{\equal{#1}{tertiarythr}}{T3}{}%
+  \ifthenelse{\equal{#1}{performers}}{ALL}{}%
 }
 
 \newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
@@ -35,30 +39,66 @@
 \setlength{\fboxrule}{2pt}
 
 % tsdirectionforall = Direction for All
-\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.1\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.1\baselineskip}}
+\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.3\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.3\baselineskip}}
 
 % \newtoggle{thickbox}
 % \ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
 
-\newtoggle{thick}
+% For directions for all secondaries.
+\newtoggle{secondary}
+\ifthenelse{\equal{\speaker}{secondaryone}}{\toggletrue{secondary}}{}
+\ifthenelse{\equal{\speaker}{secondarytwo}}{\toggletrue{secondary}}{}
+\ifthenelse{\equal{\speaker}{secondarythr}}{\toggletrue{secondary}}{}
+
+% For directions for all performers, where a box should be thick
+% for everyone *except* the audience, and Q and R.
+\newtoggle{performers}
+\toggletrue{performers}
+\ifthenelse{\equal{\speaker}{audience}}{\togglefalse{performers}}{}
+\ifthenelse{\equal{\speaker}{q}}{\togglefalse{performers}}{}
+\ifthenelse{\equal{\speaker}{r}}{\togglefalse{performers}}{}
+
+\newtoggle{thickbox}
 
 % directionbox
 %\newcommand{\directionbox}[1]{\setlength{\fboxrule}{\directionboxweight{}}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
 \newcommand{\directionbox}[2]{
-  \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thick}}{\togglefalse{thick}}
-  % \toggletrue{thick}
+  \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thickbox}}{\togglefalse{thickbox}}
+
+  % If the direction is for secondary, toggle the thickbox on if the secondary toggle is set.
+  \ifthenelse{\equal{secondary}{#1}}{%
+      \iftoggle{secondary}%
+          {\toggletrue{thickbox}}%
+          {}%
+      }{}
+
+  % If the direction is for performers, toggle the thickbox on.
+  \ifthenelse{\equal{performers}{#1}}%
+    {\iftoggle{performers}{\toggletrue{thickbox}}{}}%
+    {}
+
+% \toggletrue{thick}
   % \ifthenelse{\equal{musician}{musician}{\toggletrue{thick}}{\togglefalse{thick}}}
   % \setlength{\fboxrule}{\ifthenelse{\equal{#1}{\speaker}}{5pt}{1pt}}%
   %\setlength{\fboxrule}{\ifthenelse{\equal{\speaker}{#1}}{5pt}{1pt}}%
-  \setlength{\fboxrule}{\iftoggle{thick}{2pt}{1pt}}%
-  \vspace{0.1\baselineskip}%
-  \fbox{\parbox{0.9\textwidth}{\iftoggle{thick}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
+  \setlength{\fboxrule}{\iftoggle{thickbox}{2pt}{1pt}}%
+  \vspace{0.3\baselineskip}%
+  \fbox{\parbox{0.9\textwidth}{\iftoggle{thickbox}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
   \setlength{\fboxrule}{1pt}%
-  \vspace{0.1\baselineskip}
+  \vspace{0.3\baselineskip}
 }
 
 % tstechnical = Technical direction
-\newcommand{\tstechnical}[1]{\dbox{\vspace{0.1\baselineskip}\parbox{0.9\textwidth}{\textit{#1}}}\vspace{0.1\baselineskip}}
+\newcommand{\tstechnical}[1]{\dbox{\vspace{0.3\baselineskip}\parbox{0.9\textwidth}{\textit{#1}}}\vspace{0.3\baselineskip}}
+
+\newcommand{\technicalbox}[2]{
+  \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thickbox}}{\togglefalse{thickbox}}
+  \vspace{0.3\baselineskip}
+  \dbox{\parbox{0.9\textwidth}{
+    \iftoggle{thickbox}{\textbf{\textit{\performerletter{#1}: #2}}}{\textit{\performerletter{#1}: #2}}}
+  }
+  \vspace{0.3\baselineskip}
+}
 
 \newcommand{\playanote}{\directionbox{musician}{When the others have stopped, play a note.}}
 

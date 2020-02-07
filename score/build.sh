@@ -1,7 +1,7 @@
 
 # https://en.wikibooks.org/wiki/LaTeX/Macros
 
-PERFORMERS="musician primary secondaryone secondarytwo secondarythr tertiaryone tertiarytwo tertiarythr"
+PERFORMERS="musician primary q r secondaryone secondarytwo secondarythr tertiaryone tertiarytwo tertiarythr"
 # PERFORMERS="musician primary secondaryone"
 
 OUTPUT_DIR=../scores
