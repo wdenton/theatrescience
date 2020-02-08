@@ -17,6 +17,6 @@ done
 # The audience score is formatted differently.
 
 pdflatex -jobname=score-a -output-directory=$OUTPUT_DIR "\providecommand{\speaker{a}}\input{wrapper-audience.tex}"
-pdfbook --short-edge $OUTPUT_DIR/score-a.pdf --outfile $OUTPUT_DIR/score-a-book.pdf
+pdfbook --short-edge $OUTPUT_DIR/score-a.pdf --outfile $OUTPUT_DIR/book-a.pdf
 
 # pdflatex -jobname=script-sone '\providecommand{\speaker{sone}}\input{test.tex}'
