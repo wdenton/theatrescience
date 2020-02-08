@@ -1,29 +1,21 @@
 \newcommand{\blankspace}{\_\_\_\_\_\_\_\_}
 
+% Performer letter is capped lowercase letter, except for when it's for all performers, when it becomes ALL.
+% Maybe there's a nicer way to handle this?
 \newcommand{\performerletter}[1]{%
-  \ifthenelse{\equal{#1}{audience}}{A}{}%
-  \ifthenelse{\equal{#1}{musician}}{M}{}%
-  \ifthenelse{\equal{#1}{primary}}{P}{}%
-  \ifthenelse{\equal{#1}{q}}{Q}{}%
-  \ifthenelse{\equal{#1}{r}}{R}{}%
-  \ifthenelse{\equal{#1}{secondaryone}}{S1}{}%
-  \ifthenelse{\equal{#1}{secondarytwo}}{S2}{}%
-  \ifthenelse{\equal{#1}{secondarythr}}{S3}{}%
-  \ifthenelse{\equal{#1}{tertiary}}{T}{}%
-  \ifthenelse{\equal{#1}{tertiaryone}}{T1}{}%
-  \ifthenelse{\equal{#1}{tertiarytwo}}{T2}{}%
-  \ifthenelse{\equal{#1}{tertiarythr}}{T3}{}%
-  \ifthenelse{\equal{#1}{performers}}{ALL}{}%
+  \ifthenelse{\equal{#1}{performers}}{ALL}{\MakeUppercase{#1}}%
 }
 
-\newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
-\newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{P: #1}}{P: #1}}
-\newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{S1: #1}}{S1: #1}}
-\newcommand{\secondarytwo}[1]{\ifthenelse{ \equal{\speaker}{secondarytwo}}{\textbf{S2: #1}}{S2: #1}}
-\newcommand{\secondarythr}[1]{\ifthenelse{ \equal{\speaker}{secondarythr}}{\textbf{S3: #1}}{S3: #1}}
-\newcommand{\tertiaryone}[1]{ \ifthenelse{ \equal{\speaker}{tertiaryone} }{\textbf{T1: #1}}{T1: #1}}
-\newcommand{\tertiarytwo}[1]{ \ifthenelse{ \equal{\speaker}{tertiarytwo} }{\textbf{T1: #1}}{T2: #1}}
-\newcommand{\tertiarythr}[1]{ \ifthenelse{ \equal{\speaker}{tertiarythr} }{\textbf{T1: #1}}{T3: #1}}
+% \newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
+% \newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{P: #1}}{P: #1}}
+% \newcommand{\secondaryone}[1]{\ifthenelse{ \equal{\speaker}{secondaryone}}{\textbf{S1: #1}}{S1: #1}}
+% \newcommand{\secondarytwo}[1]{\ifthenelse{ \equal{\speaker}{secondarytwo}}{\textbf{S2: #1}}{S2: #1}}
+% \newcommand{\secondarythr}[1]{\ifthenelse{ \equal{\speaker}{secondarythr}}{\textbf{S3: #1}}{S3: #1}}
+% \newcommand{\tertiaryone}[1]{ \ifthenelse{ \equal{\speaker}{tertiaryone} }{\textbf{T1: #1}}{T1: #1}}
+% \newcommand{\tertiarytwo}[1]{ \ifthenelse{ \equal{\speaker}{tertiarytwo} }{\textbf{T1: #1}}{T2: #1}}
+% \newcommand{\tertiarythr}[1]{ \ifthenelse{ \equal{\speaker}{tertiarythr} }{\textbf{T1: #1}}{T3: #1}}
+
+\newcommand{\speak}[2]{\ifthenelse{\equal{\speaker}{#1}}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}
 
 % \ifthenelse{\equal{\speaker}{musician}}{%
 %   \newcommand{\directionboxweight}{5pt}
@@ -46,9 +38,9 @@
 
 % For directions for all secondaries.
 \newtoggle{secondary}
-\ifthenelse{\equal{\speaker}{secondaryone}}{\toggletrue{secondary}}{}
-\ifthenelse{\equal{\speaker}{secondarytwo}}{\toggletrue{secondary}}{}
-\ifthenelse{\equal{\speaker}{secondarythr}}{\toggletrue{secondary}}{}
+\ifthenelse{\equal{\speaker}{s1}}{\toggletrue{secondary}}{}
+\ifthenelse{\equal{\speaker}{s2}}{\toggletrue{secondary}}{}
+\ifthenelse{\equal{\speaker}{s3}}{\toggletrue{secondary}}{}
 
 % For directions for all performers, where a box should be thick
 % for everyone *except* the audience, and Q and R.
@@ -100,9 +92,9 @@
   \vspace{0.3\baselineskip}
 }
 
-\newcommand{\playanote}{\directionbox{musician}{When the others have stopped, play a note.}}
+\newcommand{\playanote}{\directionbox{m}{When the others have stopped, play a note.}}
 
-\newcommand{\notewait}{\directionbox{primary}{Wait until the note is gone.}}
+\newcommand{\notewait}{\directionbox{p}{Wait until it is barely possible to hear the piano.}}
 
 % \newcommand{\pronounce}[2]{«\dashuline{#2} #1»} % « »
 \newcommand{\pronounce}[2]{#1 {\footnotesize «~#2~»}} % « » \dashuline{#2}
