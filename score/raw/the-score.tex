@@ -28,13 +28,19 @@ P does about 45\% of the speaking, while the secondary group shares another 45\%
 
 \section{Instructions}
 
-Please read this carefully.  It explains how the formatting in the score works, so you will know what to do and what to say.
+This section explains how the formatting in the score works, so you will know what to do and what to say.
 
 \subsection*{Formatting}
 
-Boxes have \textit{stage directions}, which are instructions to be followed but not spoken.
+Boxes have \textit{stage directions}: instructions to be followed but not spoken.
 
-\tsdirectionforall{A bold box has directions for you to follow.}
+  \setlength{\fboxrule}{2pt}%
+  \vspace{0.3\baselineskip}%
+  \fbox{\parbox{0.9\textwidth}{\textbf{A bold box has directions for you to follow.}}}%
+  \setlength{\fboxrule}{1pt}%
+  \vspace{0.3\baselineskip}
+
+% \directionbox{}{A bold box has directions for you to follow.}
 
 \vspace{0.5\baselineskip}
 \fbox{\parbox{0.9\textwidth}{A regular box has directions for other people.  Do not perform these.}}
@@ -42,7 +48,7 @@ Boxes have \textit{stage directions}, which are instructions to be followed but 
 
 % \setlength{\fboxrule}{1pt}
 
-\tstechnical{A dashed box has technical cues, which are also in italics to set them apart. Only Q and R will act on them.}
+\technicalbox{}{A dashed box has technical cues, which are also in italics to set them apart. Only Q and R will act on them.}
 
 Your dialogue may include very brief directions.  These are shown with square brackets and small caps: \direction{Like this}.
 
@@ -80,7 +86,7 @@ Only say the word once.
 
 If you are unsure of the pronunciation, give it your best shot, but don't worry if you make a mistake.  Try again or just move on.  If the audience noticed, they will forget quickly.
 
-``Fungi'' can be pronounced with a hard or soft \textit{g} and you can say the final \textit{i} so it sounds like ``ee'' or ``aye.''  We like to say it with a hard G so ``fungi'' sounds like ``funky.''
+``Fungi'' can be pronounced in different ways.  We like to say it with a hard G so it sounds like ``funky.''
 
 The John Cage composition \textit{4' 33''} should always be pronounced in full as ``four minutes and thirty-three seconds.''
 
@@ -130,7 +136,7 @@ Then follow the score and wait for the next scenario.
   \\
 There's no going back now.}
 
-\technicalbox{q}{LX:  At 1950, turn off the art lights in the Great Hall.  There is a dimmer box in the cupboard under the light control inside the entrance.  Turn off switches 5 and 6.  The small lights facing the art on the walls will go off.}
+\technicalbox{q}{LX:  At 1950, turn off the art lights in the Great Hall.  There is a box in the cupboard under the light control inside the entrance.  Turn off switches 5 and 6.  The small lights facing the art on the walls will go off.}
 
 \technicalbox{q}{SX:  On the way back upstairs, bring the gong and the mallet.  Place them near the sound board.}
 
@@ -172,7 +178,7 @@ There's no going back now.}
 
 \technicalbox{q}{SX:  Quickly mute the microphone.}
 
-\technicalbox{q}{Hit the gong loudly.}
+\technicalbox{q}{SX:  Make an impressive sound with the gong.}
 
 \newpage
 
@@ -204,15 +210,16 @@ There's no going back now.}
 
 \directionbox{performers}{Copy P's arm movements as best you can.}
 
-\speak{p}{This show is about a concept from the field of library and information science.  The concept is:  \textit{Authority is constructed and contextual.} }
+\speak{p}{This show is about a concept from library and information science.  The concept is:  \textit{Authority is constructed and contextual.} }
 
 \technicalbox{r}{SLIDE: ``Authority is constructed and contextual.''}
 
 \speak{p}{This comes from a field of librarianship called \textit{information literacy}.}
 
-\speak{s1}{\textit{Literacy}, on its own, can be defined in a very simple way as being able to read and write.  But the world is a lot more complicated now than it was five thousand years ago.  There is writing all around us, on paper or on screens.}
+\speak{s1}{\textit{Literacy}, on its own, can be defined simply as being able to read and write.  But the world is a lot more complicated now than it was five thousand years ago.}
 
-\speak{s2}{There are many different kinds of literacies.  The equivalent with numbers is \textit{numeracy}.  Being able to read and follow maps is a kind of literacy. There is also \textit{digital literacy} and \textit{media literacy}. }
+\speak{s2}{There are many different kinds of literacies.  The equivalent with numbers is \textit{numeracy}.  Being able to read
+  and follow maps is a kind of literacy.  There is also \textit{digital literacy} and \textit{media literacy}.}
 
 \speak{s3}{For librarians the key concept is \textit{information literacy}.  Here's a definition.  It's dense, but we'll break it down.}
 
@@ -256,7 +263,7 @@ There's no going back now.}
 
 \speak{s2}{And it happens in different contexts.  Helping a kid with a homework assignment about trees is a lot easier than understanding changes to provincial policy about the Green Belt, but the steps are the same.}
 
-\speak{s3}{A lot depends on people.  Information resources don't have to be written down.  If they are written, they're written by people.  They could be on film or audio.  But sometimes they actually \textit{are} people.  We turn to others for information or advice or expertise.}
+\speak{s3}{Information resources don't have to be written in words.  They could be drawings, or on film or audio.  Sometimes they are people.  We turn to others for information and expertise.}
 
 \directionbox{p}{Move along the yellow line to the X, then turn to face the screen.}
 
@@ -340,13 +347,13 @@ There's no going back now.}
 
 \technicalbox{r}{SLIDE: Photo of Donald Gillies.}
 
-\speak{s2}{In New York Cage met Marcel \pronounce{Duchamp}{doo-SHOMP} and often played chess with him.  In fact, there's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies produced ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.  Our own Carol Anderson was in the audience.}
+\speak{s2}{In New York Cage met Marcel \pronounce{Duchamp}{doo-SHOMP}, who became a lifelong friend.  They often played chess.  In fact, there's a Club connection to Cage and Duchamp and chess. In 1968, our own Donald Gillies produced ``Reunion'' at Ryerson, where Cage and Duchamp played chess and the moves triggered sounds played by unseen musicians.  Our own Carol Anderson was in the audience.}
 
 \technicalbox{r}{SLIDE: Photo of John Cage.}
 
 \directionbox{s2}{Turn one-quarter to the right.}
 
-\speak{s3}{He used chance to take himself out of the process of composing.  He would often roll dice to determine what would happen next, and he used the \pronounce{\textit{I Ching}}{ee CHING} as a tool.  He wrote music for percussion, piano, tape, voice, small ensembles, and other instruments.  One piece is written for twelve radios, each played by two people: one controls the tuning and the other the volume and timbre.  Most famously, he used silence.}
+\speak{s3}{Cage used chance to take himself out of the process of composing.  He would often roll dice to determine what would happen next.  He wrote music for percussion, piano, tape, voice, small ensembles, and other instruments.  One piece is written for twelve radios, each played by two people: one controls the tuning and the other the volume and timbre.  Most famously, he used silence.}
 
 \directionbox{s3}{Turn one-quarter to the left.}
 
@@ -415,12 +422,6 @@ There's no going back now.}
 \speak{s3}{\ldots from themselves, and the room, and the whole environment.}
 
 \speak{p}{There's a famous quote from Cage.  Citation first.}
-
-% \speak{t1}{Richard Kostelanetz.}
-
-% \speak{t2}{\textit{Conversing with Cage}.}
-
-% \speak{t3}{2003.}
 
 \speak{t1}{John Cage.}
 
@@ -518,29 +519,30 @@ There's no going back now.}
 
 \technicalbox{r}{SLIDE: ``Information resources reflect'' paragraph with second line bold: ``Authority is constructed \ldots''}
 
-\speak{p}{Authority isn't absolute.  Different people can recognize different types of authority in different situations.  It's socially constructed. }
+\speak{p}{Authority isn't absolute.  Different people can recognize different types of authority in different situations.}
 
-\speak{s3}{People can select their own authorities, based on religion or politics or culture.  Some authorities have that position because of a role that is more or less universally respected, like nurses.  Or maybe it's about power, like the principal in an elementary school.}
+\speak{s3}{People can select their own authorities, based on religion or politics or culture.  Some authorities have that position because
+  of a respected professional role, like nurses.  Or maybe it's about power, like the principal in an elementary school.}
 
 \speak{p}{And the last part.}
 
 \technicalbox{r}{SLIDE: ``Information resources reflect'' paragraph with third line bold:  ``It is contextual in that \ldots''}
 
-\speak{p}{If I want to know what A.J.~Casson was like as a person, someone who knew Cass---maybe a member here who used to have lunch with him, and visited his house to buy a painting---is one kind of authority.   But if I want to know about the influence the Group has had on Canadian art over the last century, that's a different context.  I'd want to talk to art historians.  Though that person who knew Cass could \textit{be} an art historian, and be an authority in two different ways.}
+\speak{p}{If I want to know what A.J.~Casson was like as a person, someone who knew Cass---maybe a member here who used to have lunch with him, and visited his house to buy a painting---is one kind of authority.   But if I want to know about the influence the Group has had on Canadian art over the last century, that's a different context.  I'd want to talk to an art historian.  Which could be the same person.}
 
 \technicalbox{r}{SLIDE: ``Authority is constructed and contextual''.}
 
-\speak{p}{Two last things about this frame.  There are some things people who are getting better with this concept will do, such as:}
+\speak{p}{Two last things about this frame.  There are some things people who are \textit{getting better} with this concept will do, such as:}
 
 \speak{s1}{They will be able to define different types of authority, for example: subject expertise, societal position or personal experience.}
 
 \speak{s2}{They know indicators that help determine an authority's credibility.}
 
-\speak{s3}{They know that there may be scholars who are widely acknowledged as authorities in an area, but still be challenged by other scholars.}
+\speak{s3}{They know that there may be scholars who are widely acknowledged as authorities in an area, but are still challenged by other scholars.}
 
-\speak{p}{And they know they can develop their own authority, and that doing so comes with responsibilities.  Also, there are ways that people will think and act.  People who understand this frame will maintain an open mind.}
+\speak{p}{And they know they can develop their own authority, and that doing so comes with responsibilities.  Also, there are ways that people will \textit{think and act}.}
 
-\speak{s1}{They will look for authoritative sources, and remember authority doesn't need to come from a university degree.}
+\speak{s1}{ People who understand this frame will maintain an open mind. They will look for authoritative sources, and remember authority doesn't need to come from a university degree.}
 
 \speak{s2}{They will be aware of who is saying someone is an authority, and why.}
 
@@ -602,7 +604,7 @@ There's no going back now.}
 
 \speak{t3}{Merce.}
 
-\speak{p}{We start with his music.  We saw the score of \textit{4' 33''}.  If someone knows one thing about Cage, they know he composed a work of music where there is no music.  That is not an easy concept.  The piece has been attacked many times over the years.  Even his own mother was unsure.  After the premier, she said to composer Earle Brown, ``Now Earle, don't you think that John has gone too far this time?''}
+\speak{p}{We start with his music.  We saw the score of \textit{4' 33''}.  If you know one thing about Cage, you know he composed a work of music where there is no music.  That is not an easy concept.  Even his own mother was unsure.  After the premier, she said to composer Earle Brown, ``Now Earle, don't you think that John has gone too far this time?''}
 
 % \speak{s1}{He arrived at it through years of work.  There was a lot of thought and intent behind it.  Even though his music could sound wild and difficult, it was made with care and deliberation.  He knew what he was doing.  And through his life he kept changing what he was doing.}
 
@@ -663,7 +665,7 @@ There's no going back now.}
 
 \notewait{}
 
-\speak{p}{John Cage became interested in mushrooms in 1954, when he was staying at a farmhouse.  He said:}
+\speak{p}{Cage became interested in mushrooms in 1954, when he was staying at a farmhouse.  He said:}
 
 \speak{s1}{``I found myself living in small quarters with four other people, and I was not used to such lack of privacy, so I took to walking in the woods.  And since it was August, the fungi are the flora of the forest at that time.''}
 
@@ -708,9 +710,9 @@ There's no going back now.}
 
 \speak{s3}{My two colleagues are now going to perform ``Mushroom Verbatim.''  One after the other, they are going to put on those headphones and repeat what they hear.  It is not easy to repeat what you are hearing, without preparation.  We will forgive them any mistakes.  First, story number sixty-six.}
 
-\directionbox{s1}{Cross to the plinth and stand in front of the chair.  Here is what is going to happen:  you are going to put on the headphones and then repeat what you hear.  To help people hear your voice, you should look at the top of the stage so your head is raised.  \\
+\directionbox{s1}{Cross to the plinth and stand in front of the chair.  To prepare, read the instructions below but do not follow them.  When you know what is going to happen, go through them again, but this time follow them. \\
   \\
-  Now it is time to get ready.  Put your binder down on the chair, face up so that you can see these words.  Put on the headphones.   Face the stage.  When you are ready, make a ``thumbs'' up sign with each hand.  You will hear three bongs, then the words for you to repeat.}
+  Instructions:  Put your binder down on the chair, face up so that you can see these words.  Put on the headphones.  Face the stage.  When you are ready, make a ``thumbs'' up sign with each hand.  You will hear three bongs, then a voice speaking.  Repeat what you hear.  To help your voice be heard, look at the top of the stage curtains while you do this.  You will hear three bongs when it's done.}
 
 \tsdirectionforall{While the Mushroom Verbatim is happening, look at the speaker.}
 
@@ -720,13 +722,15 @@ There's no going back now.}
 
 \speak{p}{Next, story number sixty.}
 
-\directionbox{s2}{Cross to the plinth and stand in front of the chair.  Here is what is going to happen:  you are going to put on the headphones and then repeat what you hear.  To help people hear your voice, you should look at the top of the stage so your head is raised.  Now it is time to get ready.  Put your binder down on the chair, face up so that you can see these words.  Put on the headphones.   Face the stage.  When you are ready, make a ``thumbs up'' sign with each hand.  You will hear three bongs, then the words for you to repeat.}
+\directionbox{s2}{Cross to the plinth and stand in front of the chair.  To prepare, first read the instructions below but do not follow them.  When you know what is going to happen, go through them again, but this time follow them. \\
+  \\
+  Instructions:  Put your binder down on the chair, face up so that you can see these words.  Put on the headphones.  Face the stage.  When you are ready, make a ``thumbs'' up sign with each hand.  You will hear three bongs, then a voice speaking.  Repeat what you hear.  To help your voice be heard, look at the top of the stage curtains while you do this.  You will hear three bongs when it's done.}
 
 \tsdirectionforall{While the Mushroom Verbatim is happening, look at the speaker.}
 
 \tstechnical{Q: SX: At the thumbs up, play ``Indeterminacy 60'' audio file over headphones.}
 
-\directionbox{s2}{When the story is over, put the headphones back on the plinth, pick up your binder, and return to where you were standing, cross to the green tape and go towards the entrance curtains.  Turn onto the blue line and go to the blue square.  Face the piano.}
+\directionbox{s2}{When the story is over, put the headphones back on the plinth, pick up your binder, and return to where you were standing, then cross to the green tape and go towards the entrance curtains.  Turn onto the blue line and go to the blue square.  Face the piano.}
 
 \directionbox{p}{When S2 is done and starts to move, walk on the yellow tape and stand on the X.  Face the piano.}
 
@@ -750,11 +754,11 @@ There's no going back now.}
 
 \speak{t3}{Contextual.}
 
-\speak{s1}{Cage began teaching mushroom identification at a university in New York.  This led to him helping to found the New York \pronounce{Mycological}{my-co-LOJ-ical} Society, which is still operating today.}
+\speak{s1}{He taught mushroom identification at a university in New York.  This led to him co-founding the New York \pronounce{Mycological}{my-co-LOJ-ical} Society, which is still operating today.}
 
-\speak{s2}{He had ``perhaps the most extensive private library ever compiled on the subject'' of mushrooms.  In 1960 he sold wild mushrooms to the Four Seasons restaurant in New York.}
+\speak{s2}{He had ``perhaps the most extensive private library ever compiled on the subject'' of mushrooms.}
 
-\speak{s3}{Notable fact:  He never ate magic mushrooms.  He had no interest that kind of experience.}
+\speak{s3}{For a few months in 1960 he sold wild mushrooms to the Four Seasons restaurant in New York.}
 
 \speak{p}{Cage was an \textit{authority} on mushrooms.  Definition again, please.}
 
@@ -762,7 +766,7 @@ There's no going back now.}
 
 \speak{t1}{``Information resources reflect their creators’ expertise and credibility, and are evaluated based on the information need and the context in which the information will be used.''}
 
-\speak{s1}{We know about his expertise and his credibility.  As for information needs, if you wanted to know about mushrooms, perhaps while out in the forest, he would be a great person to ask.}
+\speak{s1}{Cage himself was an information resource.  We know about his expertise and his credibility.  If you wanted to know about mushrooms, perhaps while out in the forest, he would be a great person to ask.}
 
 \speak{t2}{``Authority is constructed in that various communities may recognize different types of authority.''}
 
@@ -770,7 +774,7 @@ There's no going back now.}
 
 \speak{t3}{``It is contextual in that the information need may help to determine the level of authority required.''}
 
-\speak{s3}{If you needed a genetic analysis of a fungus, you'd go to a researcher in a lab.  But if you needed to identify a mushroom you'd found in the forest, he could do it.  He could tell you if it was poisonous or not.  You could trust John Cage to stop you from dying from mushroom poisoning.}
+\speak{s3}{If you needed a genetic analysis of a fungus, you'd go to a researcher in a lab.  But if you needed to identify a mushroom you'd found in the forest, he could do it.  He could tell you if it was poisonous or not.  You could trust John Cage to prevent you from accidentally dying from mushroom poisoning.}
 
 \tstechnical{R: SLIDE: ``Authority is constructed and contextual.''}
 
@@ -810,19 +814,33 @@ There's no going back now.}
 
 \speak{t3}{2015.}
 
-\speak{p}{Cage influenced minimalism, conceptual art, Fluxus and other movements.  But though there are many people who admire him, there are even more people who don't.  To them his work is somewhere between an interesting curiosity or an absurdity that has nothing to do with what music is really about.}
+\speak{p}{Cage influenced minimalism, conceptual art, Fluxus and other movements.  There are many people who admire him, but there are even more who don't.  To them his work is somewhere between an interesting curiosity and an absurdity that has nothing to do with actual music.}
 
-\speak{s1}{Composers working at the same time as Cage, who also did ``new'' and sometimes difficult music, didn't always agree with him.  Pierre Boulez and Karl-Heinz Stockhausen thought his use of chance was misguided.  Luigi Nono said his work was ``profoundly reactionary'' (because it did not allow true creative liberty) and called Cage's followers ``products of a narcissistically coquettish pseudo-radicalism.''}
+\speak{s1}{Composers who also did new and sometimes difficult music didn't always agree with him.  Pierre \pronounce{Boulez}{boo-LEZZ} and Karl-Heinz \pronounce{Stockhausen}{SHTOCK-how-sen} thought his use of chance was misguided.  Luigi \pronounce{Nono}{NO-no} said his work was ``profoundly reactionary'' (because it did not allow true creative liberty) and called Cage's followers ``products of a narcissistically coquettish pseudo-radicalism.''}
 
-\speak{s2}{QUOTES FROM YOUTUBE HERE.}
+\speak{s2}{YouTube has many reactions to \textit{4' 33''}.  A few examples.}
+
+\speak{t1}{``Finally I've found a song I can master!''} % Nemo TheEight
+
+\speak{t2}{``I'm setting this as my ringtone.''} % tenphan0n0
+
+\speak{t3}{``3:27 is the best part.''} % skybluejellybeans
+
+\speak{t1}{``Good tempo chosen by the conductor.''} % seadog365
+
+\speak{t2}{``This is not funny, it is the direct consequence of deconstructionism (extreme liberalism).''} % claude lara
+
+\speak{t2}{``This is probably one of the stupidest things I have ever heard, not heard?  My music history professor has never been angrier than when she was teaching us about John Cage and this stupid song.''} % Captian Bigums
 
 \speak{s3}{Our own Betty Trott, professor emerita of philosophy at Ryerson, taught the silent piece in a course on the aesthetics of music.  She said, ``The aesthetics explanation was an attempt to focus on the silence, or `not music,' as part of composition.  Most students grasped the principle, but dismissed the result with the question, `Why is four minutes of audience noise of any interest at all?' \ldots Why, my students said, would you pay money to listen to other people sneeze?  Good question, I thought. Sometimes theory is best left on the page.''}
 
 \speak{p}{Composer and critic Kyle Gann sums it up:}
 
-\speak{s1}{``How to explain the fact that, for hundreds of composers, Cage remains one of the central musical figures of the mid-twentieth century, if not \textit{the} central one? ''}
+% \speak{s1}{``How to explain the fact that, for hundreds of composers, Cage remains one of the central musical figures of the mid-twentieth century, if not \textit{the} central one? ''}
 
-\speak{s2}{``For thousands trained in American conservatories, Cage is merely a historical irritant, a charlatan against whom their teachers warned them.  For another type, Cage is a model, a basic paradigm for a composer's life.  In America, this is probably the most reliable distinction between what is called the Uptown composer (Uptown as in Manhattan) and the Downtown composer.''}
+\speak{s1}{``For thousands trained in American conservatories, Cage is merely a historical irritant, a charlatan against whom their teachers warned them.  For another type, Cage is a model, a basic paradigm for a composer's life.''}
+
+\speak{s2}{``In America, this is probably the most reliable distinction between what is called the Uptown composer (Uptown as in Manhattan) and the Downtown composer.''}
 
 \speak{s3}{``Uptown composers mention Cage with anger or contempt or condescension; Downtown composers talk of him with reverence, respect, and seriousness.  Perhaps no other composer in history elicits such extremes of approval and disapproval.''}
 
@@ -834,11 +852,11 @@ There's no going back now.}
 
 \speak{t3}{2002.}
 
-\speak{p}{Where do you fit in?  Maybe Cage \textit{is} an authority for you: you look to him for lessons about how to find and create music and art and life.  Or maybe he \textit{isn't} an authority for you: nothing of his work is an influence, and he and his followers are completely removed from your practice.}
+\speak{p}{Cage's authority on mushrooms seems clear.  Whether or not he is an authority on music is entirely different.  Is he an authority for you? Do you look to him for lessons about how to find and create art and life?  Or maybe he \textit{isn't} an authority for you: nothing of his work is an influence, and he and his followers are completely removed from your practice.}
 
-\speak{s1}{In which case, you have different authorities.  Either way, the authority is constructed.  Different communities recognize different types of authority.  Cage is an authority at Soundscapes and the Music Gallery.  At Opera Atelier and Tafelmusik, he is not.}
+\speak{s1}{In which case, you will have your own different authorities.  Either way, the authority is constructed.  Different communities recognize different types of authority.  Here in Toronto, Cage is an authority at Soundscapes and the Music Gallery.  At Opera Atelier and Tafelmusik, he is not.}
 
-\speak{s2}{And it's contextual.  Do you want to let ambient environmental sounds to be part of a performance?  That will lead you right to Cage.  If you want to perform a crowd-pleasing Mozart symphony, you will look elsewhere.}
+\speak{s2}{And it's contextual.  Do you want to let ambient environmental sounds to be part of a performance?  That will lead you to Cage.  If you want to perform a crowd-pleasing Mozart symphony, you will look elsewhere.}
 
 \speak{s3}{You can make up your own mind about Cage's artistic expertise and whether it is useful for what you need.}
 
@@ -884,13 +902,17 @@ There's no going back now.}
 
 \speak{p}{There will be brief pauses between the movements.  We will now prepare.}
 
-\tsdirectionforall{This is what will happen:  You are going to pay close attention to P, who will conduct.  Do not do anything.  Just pay attention and listen.  When the piece is over, P will say, ``That was \textit{4' 33''}.''  Then you will stand and bow with the conductor.  \\
+\tsdirectionforall{To prepare, first read the instructions below but do not follow them.  When you know what is going to happen, go through them again, but this time follow them. \\
+\\
+  Instructions: You are going to pay close attention to P, who will conduct.  Do not do anything.  Just pay attention and listen.  When the piece is over, P will say, ``That was \textit{4' 33''}.''  Then you will stand and bow with the conductor.  \\
   \\
-  Now it is time to begin.  When you are ready, place your score face up on the floor in front of you (the musician can leave the score where it is), sit up straight, and pay attention.}
+  When you are ready, place your score face up on the floor in front of you (the musician can leave the score where it is).  Then pay attention.}
 
-\directionbox{p}{This is what will happen: You are going to put on the headphones and follow the instructions you hear about how to conduct this piece.  This is \textit{not} a Mushroom Verbatim.  Do not repeat what you hear.\\
+\directionbox{p}{To prepare, first read the instructions below but do not follow them.  When you know what is going to happen, go through them again, but this time follow them.\\
   \\
-Now it is time to begin.  Stand facing the stage.  Place your score face up on the chair.  Put on the headphones.  When the others in front of you have put their scores on the floor, they are ready.  When you are ready, make a ``thumbs up'' with each hand.  You will hear three bongs, then the instructions.}
+  Instructions: This is \textit{not} a Mushroom Verbatim.  \textit{Do not repeat what you hear}.\\
+  \\
+  Stand facing the stage.  Place your score face up on the chair.  Put on the headphones.  When the others have put their scores on the floor, they are ready.  When you are ready, make a ``thumbs up'' with each hand.  You will hear two bongs, then Ashley Williamson telling you what to do to conduct.  Follow the instructions.}
 
 \technicalbox{q}{SX: At the thumbs up, play audio file 433-instructions.mp3.}
 
@@ -912,15 +934,29 @@ Now it is time to begin.  Stand facing the stage.  Place your score face up on t
 
 \notewait{}
 
-\directionbox{r}{R: SLIDE: ``Theatre Science is constructed and contextual.''}
+\technicalbox{r}{SLIDE: ``Theatre Science is constructed and contextual.''}
 
-\speak{p}{What about this show?}
+\speak{p}{What about this show?  Who's the authority here?}
 
 \speak{s1}{I'm just reading these words.  I didn't write them.  Why should you believe someone who's reading things aloud from a binder they received an hour ago?}
 
-\speak{s2}{By making this show, Williamson and Denton are presenting themselves as authorities.  Are they?  Ashley Williamson has a PhD in theatre studies.  William Denton is a librarian at York University.  They have some credentials, at least.}
+\speak{s2}{Williamson and Denton are presenting themselves as authorities.  Are they?  Ashley Williamson has a PhD in theatre studies.  William Denton is a librarian at York University.  They have some credentials, at least.}
 
-\speak{s3}{This show combines their expertise:  it uses theatrical methods to investigate a concept from library science.  They cited their work.  They gave a bibliography.  The core concept comes from a reputable source.  Their argument seems cogent.}
+\speak{s3}{This show combines their expertise:  it uses theatrical methods to investigate a concept from library science.  They cited their work.  They gave a bibliography.  The core concept comes from a reputable source.  Their hypothesis seems valid.}
+
+\speak{p}{We leave it to you.  You've had the background.}
+
+\speak{t1}{Find.}
+
+\speak{t2}{Use.}
+
+\speak{t3}{Understand.}
+
+\speak{t1}{Evaluate.}
+
+\speak{t2}{Integrate.}
+
+\speak{t3}{Share.}
 
 \speak{p}{We leave it to you now.  You heard the concept.  You heard the example.}
 
@@ -936,7 +972,7 @@ Now it is time to begin.  Stand facing the stage.  Place your score face up on t
 
 \speak{t3}{Merce.}
 
-\speak{p}{It's up to you to consider.  Is it true?  It is useful?  Could it be applied in daily life?  Who's to say?}
+\speak{p}{Who's an authority?  When?  Where?  Why?  Are \textit{they}?  Are \textit{you}?}
 
 \speak{t1}{Authority.}
 
@@ -972,7 +1008,9 @@ Now it is time to begin.  Stand facing the stage.  Place your score face up on t
 
 \technicalbox{q}{LX:  House lights to full.}
 
-\technicalbox{q}{SX:  Put back the microphone, turn off amp, turn off sound board.}
+\technicalbox{q}{SX:  Put back the microphone.  Turn off the amp and sound board.}
+
+\technicalbox{q}{LX:  In the Great Hall, turn on the art lights (switches 5 and 6).}
 
 \technicalbox{R}{Strike the projector and laptop.}
 
@@ -988,7 +1026,8 @@ John Cage:
 \textbf{Schoenberg quote} ?????;
 \textbf{\textit{Grove Music Online}} Pritchett, Kuhn and Garrett;
 \textbf{various aspects of his life} Silverman and Gann (2010);
-\textbf{``no such thing as silence''} Kostelanetz 70.
+\textbf{``no such thing as silence''} Cage ?????.
+% \textbf{``no such thing as silence''} Kostelanetz 70.
 
 Authority:
 \textbf{\textit{Framework for Information Literacy for Higher Education}} ACRL.
@@ -1009,6 +1048,8 @@ Cage and authority:
 \textbf{Yoko Ono quote} Hoenigman;
 \textbf{Philip Glass quote} Glass 95--96;
 \textbf{Luigi Nono quotes} Silverman 160;
+\textbf{first YouTube three comments are by Nemo TheEight, tenphan0n0 and skybluejellybeans on https://www.youtube.com/watch?v=HypmW4Yd7SY};
+\textbf{second three comments are by seadog365, claude lara and Captian Bigums on on https://www.youtube.com/watch?v=OovYr0w7BMA};
 \textbf{Betty Trott quote} personal communication;
 \textbf{``one of the central musical figures''} Gann (2002) 243.
 
