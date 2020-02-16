@@ -1,10 +1,28 @@
 \newcommand{\blankspace}{\_\_\_\_\_\_\_\_}
 
 % Performer letter is capped lowercase letter, except for when it's for all performers, when it becomes ALL.
+% And if it's st then it becomes 'Ss and Ts'.
 % Maybe there's a nicer way to handle this?
 \newcommand{\performerletter}[1]{%
-  \ifthenelse{\equal{#1}{performers}}{ALL}{\MakeUppercase{#1}}%
+  \IfEqCase{#1}{%
+    {performers}{ALL}%
+    {st}{Ss and Ts}%
+    {mst}{M, Ss and Ts}%
+    {ps}{P and Ss}%
+    }%
+    [\MakeUppercase{#1}]%
 }
+
+ %  \ifthenelse{\equal{#1}{performers}}{ALL}{\MakeUppercase{#1}}%
+
+  % \ifthenelse{\equal{#1}{performers}}%
+  %   {ALL}%
+  %   {\ifthenelse{\equal{#1}{st}}%
+  %     {Ss and Ts}%
+  %       {\ifthenelse{\equal{#1}{ps}}%
+  %       {P and Ss}%
+  %       {\MakeUppercase{#1}}%
+  %   }}%
 
 % \newcommand{\musician}[1]{    \ifthenelse{ \equal{\speaker}{musician}    }{\textbf{M: #1}}{M: #1}}
 % \newcommand{\primary}[1]{     \ifthenelse{ \equal{\speaker}{primary}     }{\textbf{P: #1}}{P: #1}}
@@ -50,6 +68,27 @@
 \ifthenelse{\equal{\speaker}{q}}{\togglefalse{performers}}{}
 \ifthenelse{\equal{\speaker}{r}}{\togglefalse{performers}}{}
 
+\newtoggle{ps}
+\togglefalse{ps}
+\ifthenelse{\equal{\speaker}{p}}{\toggletrue{ps}}{}
+\ifthenelse{\equal{\speaker}{s1}}{\toggletrue{ps}}{}
+\ifthenelse{\equal{\speaker}{s2}}{\toggletrue{ps}}{}
+\ifthenelse{\equal{\speaker}{s3}}{\toggletrue{ps}}{}
+
+\newtoggle{st}
+\togglefalse{st}
+\ifthenelse{\equal{\speaker}{s1}}{\toggletrue{st}}{}
+\ifthenelse{\equal{\speaker}{s2}}{\toggletrue{st}}{}
+\ifthenelse{\equal{\speaker}{s3}}{\toggletrue{st}}{}
+\ifthenelse{\equal{\speaker}{t1}}{\toggletrue{st}}{}
+\ifthenelse{\equal{\speaker}{t2}}{\toggletrue{st}}{}
+\ifthenelse{\equal{\speaker}{t3}}{\toggletrue{st}}{}
+
+\newtoggle{mst}
+\togglefalse{mst}
+\iftoggle{st}{\toggletrue{mst}}{}
+\ifthenelse{\equal{\speaker}{m}}{\toggletrue{mst}}{}
+
 \newtoggle{thickbox}
 
 % directionbox
@@ -67,6 +106,21 @@
   % If the direction is for performers, toggle the thickbox on.
   \ifthenelse{\equal{performers}{#1}}%
     {\iftoggle{performers}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % If the direction is for secondaries and tertiaries, toggle the thickbox on if the st toggle is on.
+  \ifthenelse{\equal{st}{#1}}%
+    {\iftoggle{st}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % MST
+  \ifthenelse{\equal{mst}{#1}}%
+    {\iftoggle{mst}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % PS
+  \ifthenelse{\equal{ps}{#1}}%
+    {\iftoggle{ps}{\toggletrue{thickbox}}{}}%
     {}
 
 % \toggletrue{thick}
@@ -95,6 +149,9 @@
 \newcommand{\playanote}{\directionbox{m}{When the others have stopped, play a note.}}
 
 \newcommand{\notewait}{\directionbox{p}{Wait until it is barely possible to hear the piano.}}
+
+% Use a newpage between sections for performers, but not for the audience (to save space in the booklet score).
+\newcommand{\newpageforperformers}{\ifthenelse{\equal{\speaker}{a}}{}{\newpage}}
 
 % \newcommand{\pronounce}[2]{«\dashuline{#2} #1»} % « »
 \newcommand{\pronounce}[2]{#1 {\footnotesize «~#2~»}} % « » \dashuline{#2}
