@@ -2,14 +2,19 @@
 \pagestyle{fancy}
 % \fancyhead[L]{Theatre Science}
 
+\fancyhead[LE,RO]{\textsl{\rightmark}}
+\fancyhead[LO,RE]{\textsl{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\sectionmark}[1]{\markboth{\textsc{\lowercase{#1}}}{}}
+
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 \microtypecontext{spacing=nonfrench}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage[margin=3cm]{geometry}
-% \usepackage[inner=4cm,outer=2cm]{geometry}
+\usepackage[inner=3.5cm,outer=2.5cm]{geometry}
 
 % Baskerville font, with text figures.
 \usepackage[osf]{Baskervaldx}
@@ -17,12 +22,6 @@
 \usepackage[normalem]{ulem}
 
 \usepackage{xcolor}
-
-% For IfEqCase for switches
-\usepackage{xstring}
-
-% For ifthenelse
-\usepackage{etoolbox}
 
 % For resizebox (for the title page)
 \usepackage{graphicx}
@@ -55,10 +54,16 @@
 % \setlength{\parskip}{\baselineskip}%
 % \setlength{\parindent}{0pt}%
 
-\usepackage{ifthen}
+% \usepackage{ifthen}
 % \providecommand\speaker{sone}
 % \ifthenelse{ \equal{\blackandwhite}{true} }{
 % % "black and white" mode; do something..
 % }{
 % % "color" mode; do something different..
 % }
+
+% For IfEqCase for switches
+\usepackage{xstring}
+
+% For ifthenelse
+\usepackage{etoolbox}
