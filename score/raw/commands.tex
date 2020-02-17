@@ -9,7 +9,9 @@
     {st}{Ss and Ts}%
     {mst}{M, Ss and Ts}%
     {ps}{P and Ss}%
-    }%
+    {nots1}{ALL but S1}%
+    {nots2}{ALL but S2}%
+}%
     [\MakeUppercase{#1}]%
 }
 
@@ -68,6 +70,7 @@
 \ifthenelse{\equal{\speaker}{q}}{\togglefalse{performers}}{}
 \ifthenelse{\equal{\speaker}{r}}{\togglefalse{performers}}{}
 
+% For P and the Ss.
 \newtoggle{ps}
 \togglefalse{ps}
 \ifthenelse{\equal{\speaker}{p}}{\toggletrue{ps}}{}
@@ -75,6 +78,7 @@
 \ifthenelse{\equal{\speaker}{s2}}{\toggletrue{ps}}{}
 \ifthenelse{\equal{\speaker}{s3}}{\toggletrue{ps}}{}
 
+% For Ss and Ts
 \newtoggle{st}
 \togglefalse{st}
 \ifthenelse{\equal{\speaker}{s1}}{\toggletrue{st}}{}
@@ -84,10 +88,23 @@
 \ifthenelse{\equal{\speaker}{t2}}{\toggletrue{st}}{}
 \ifthenelse{\equal{\speaker}{t3}}{\toggletrue{st}}{}
 
+% For M, Ss and Ts.
 \newtoggle{mst}
 \togglefalse{mst}
 \iftoggle{st}{\toggletrue{mst}}{}
 \ifthenelse{\equal{\speaker}{m}}{\toggletrue{mst}}{}
+
+% Everyone except S2 (and the audience)
+\newtoggle{nots1}
+\toggletrue{nots1}
+\ifthenelse{\equal{\speaker}{a}}{\togglefalse{nots1}}{}
+\ifthenelse{\equal{\speaker}{s1}}{\togglefalse{nots1}}{}
+
+% Everyone except S2 (and the audience)
+\newtoggle{nots2}
+\toggletrue{nots2}
+\ifthenelse{\equal{\speaker}{a}}{\togglefalse{nots2}}{}
+\ifthenelse{\equal{\speaker}{s2}}{\togglefalse{nots2}}{}
 
 \newtoggle{thickbox}
 
@@ -121,6 +138,16 @@
   % PS
   \ifthenelse{\equal{ps}{#1}}%
     {\iftoggle{ps}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % PS
+  \ifthenelse{\equal{nots1}{#1}}%
+    {\iftoggle{nots1}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % PS
+  \ifthenelse{\equal{nots2}{#1}}%
+    {\iftoggle{nots2}{\toggletrue{thickbox}}{}}%
     {}
 
 % \toggletrue{thick}
