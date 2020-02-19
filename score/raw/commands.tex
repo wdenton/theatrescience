@@ -11,6 +11,7 @@
     {ps}{P and Ss}%
     {nots1}{ALL but S1}%
     {nots2}{ALL but S2}%
+    {tertiary}{Ts}%
 }%
     [\MakeUppercase{#1}]%
 }
@@ -61,6 +62,12 @@
 \ifthenelse{\equal{\speaker}{s1}}{\toggletrue{secondary}}{}
 \ifthenelse{\equal{\speaker}{s2}}{\toggletrue{secondary}}{}
 \ifthenelse{\equal{\speaker}{s3}}{\toggletrue{secondary}}{}
+
+% For directions for all tertiaries.
+\newtoggle{tertiary}
+\ifthenelse{\equal{\speaker}{t1}}{\toggletrue{tertiary}}{}
+\ifthenelse{\equal{\speaker}{t2}}{\toggletrue{tertiary}}{}
+\ifthenelse{\equal{\speaker}{t3}}{\toggletrue{tertiary}}{}
 
 % For directions for all performers, where a box should be thick
 % for everyone *except* the audience, and Q and R.
@@ -128,6 +135,11 @@
   % If the direction is for secondaries and tertiaries, toggle the thickbox on if the st toggle is on.
   \ifthenelse{\equal{st}{#1}}%
     {\iftoggle{st}{\toggletrue{thickbox}}{}}%
+    {}
+
+  % Tertiaries
+  \ifthenelse{\equal{tertiary}{#1}}%
+    {\iftoggle{tertiary}{\toggletrue{thickbox}}{}}%
     {}
 
   % MST
