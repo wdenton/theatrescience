@@ -3,17 +3,17 @@ layout: default
 title: Theatre Science
 description: Williamson and Denton investigate.
 ---
-# Theatre Science
+# theatre science
 
-Theatre Science is an investigation by [Ashley Williamson](http://www.ashleywilliamson.org/) and [William Denton](https://www.miskatonic.org/).
+{% include image.html url = "/images/poster-202002.png" caption = "Poster for first two performances." %}
 
-Source code: <https://github.com/wdenton/theatrescience>.
+Theatre Science is an investigation by [Ashley Williamson](http://www.ashleywilliamson.org/) and [William Denton](https://www.miskatonic.org/).  Source code: <https://github.com/wdenton/theatrescience>.
 
-More information will be posted soon.
-
-Beta test:  20 February 2020.  Performance:  27 February 2020.  At the [Arts and Letters Club of Toronto](https://www.artsandlettersclub.ca/).
+Open beta test:  20 February 2020.  Experiment One:  27 February 2020.  At the [Arts and Letters Club of Toronto](https://www.artsandlettersclub.ca/).
 
 {% include image.html url = "/images/simulation-02-lamps.jpg" caption = "Photo taken at Simulation 02." %}
+
+
 
 **Limitation.  Algorithm.  Method.  Process.  Score.**
 
@@ -21,7 +21,7 @@ Beta test:  20 February 2020.  Performance:  27 February 2020.  At the [Arts and
 
 <hr>
 
-© Ashley Williamson and William Denton 2019.
+© Ashley Williamson and William Denton 2020.
 <br />
 Theatre Science is <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a>.
 
