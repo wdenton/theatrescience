@@ -47,12 +47,33 @@
 % Stage directions are in small caps.
 \newcommand{\direction}[1]{[\textsc{\lowercase{#1}}]}
 
+%%
+%% Lots of whitespace for performers
+%%
+
 % Box formatting, so they have nice lines and are well padded
-\setlength{\fboxsep}{1em}
 \setlength{\fboxrule}{2pt}
+% More padding for performers.
+\ifthenelse{\equal{\speaker}{a}}{\setlength{\fboxsep}{1em}}{\setlength{\fboxsep}{2em}}
+
+% Put a bigger vspace around boxes for performers
+% Call with \vspace{\myboxspace}
+\newlength{\myboxspace}
+\setlength{\myboxspace}{0.4\baselineskip}
+\ifthenelse{\equal{\speaker}{a}}{\setlength{\myboxspace}{0.2\baselineskip}}{}
+
+% Increase the line spacing for performers
+\ifthenelse{\equal{\speaker}{a}}{}{\renewcommand{\baselinestretch}{1.2}}
+
+% Use a newpage between sections for performers, but not for the audience (to save space in the booklet score).
+\newcommand{\newpageforperformers}{\ifthenelse{\equal{\speaker}{a}}{}{\newpage}}
+
+%%
+%% Commands
+%%
 
 % tsdirectionforall = Direction for All
-\newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.3\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.3\baselineskip}}
+% \newcommand{\tsdirectionforall}[1]{\setlength{\fboxrule}{2pt}\vspace{0.3\baselineskip}\fbox{\parbox{0.9\textwidth}{\textbf{#1}}}\setlength{\fboxrule}{1pt}\vspace{0.3\baselineskip}}
 
 % \newtoggle{thickbox}
 % \ifstrequal{\speaker}{musician}{\toggletrue{thickbox}}{}
@@ -117,7 +138,7 @@
 
 % directionbox
 %\newcommand{\directionbox}[1]{\setlength{\fboxrule}{\directionboxweight{}}\vspace{0.5\baselineskip}\fbox{\parbox{\textwidth}{#1}}\setlength{\fboxrule}{1pt}\vspace{0.5\baselineskip}}
-\newcommand{\directionbox}[2]{
+\newcommand{\directionbox}[2]{%
   \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thickbox}}{\togglefalse{thickbox}}
 
   % If the direction is for secondary, toggle the thickbox on if the secondary toggle is set.
@@ -167,19 +188,19 @@
   % \setlength{\fboxrule}{\ifthenelse{\equal{#1}{\speaker}}{5pt}{1pt}}%
   %\setlength{\fboxrule}{\ifthenelse{\equal{\speaker}{#1}}{5pt}{1pt}}%
   \setlength{\fboxrule}{\iftoggle{thickbox}{2pt}{1pt}}%
-  \vspace{0.3\baselineskip}%
+  \vspace{\myboxspace}% \vspace{0.3\baselineskip}%
   \fbox{\parbox{0.9\textwidth}{\iftoggle{thickbox}{\textbf{\performerletter{#1}: #2}}{\performerletter{#1}: #2}}}%
   \setlength{\fboxrule}{1pt}%
-  \vspace{0.3\baselineskip}
+  \vspace{\myboxspace}%\vspace{0.3\baselineskip}
 }
 
 % tstechnical = Technical direction
 % \newcommand{\tstechnical}[1]{\dbox{\vspace{0.3\baselineskip}\parbox{0.9\textwidth}{\textit{#1}}}\vspace{0.3\baselineskip}}
 
-\newcommand{\technicalbox}[2]{
+\newcommand{\technicalbox}[2]{%
   \ifthenelse{\equal{\speaker}{#1}}{\toggletrue{thickbox}}{\togglefalse{thickbox}}
   \vspace{0.3\baselineskip}
-  \dbox{\parbox{0.9\textwidth}{
+  \dbox{\parbox{0.9\textwidth}{%
     \iftoggle{thickbox}{\textbf{\textit{\performerletter{#1}: #2}}}{\textit{\performerletter{#1}: #2}}}
   }
   \vspace{0.3\baselineskip}
@@ -188,9 +209,6 @@
 \newcommand{\playanote}{\directionbox{m}{When the others have stopped, play a note.}}
 
 \newcommand{\notewait}{\directionbox{p}{Wait until it is barely possible to hear the piano.}}
-
-% Use a newpage between sections for performers, but not for the audience (to save space in the booklet score).
-\newcommand{\newpageforperformers}{\ifthenelse{\equal{\speaker}{a}}{}{\newpage}}
 
 % \newcommand{\pronounce}[2]{«\dashuline{#2} #1»} % « »
 \newcommand{\pronounce}[2]{#1 {\footnotesize «~#2~»}} % « » \dashuline{#2}
@@ -204,14 +222,12 @@
   % \fontsize{10}{12}\selectfont
   % \footnotesize
   \begin{list}{}{%
-      \setlength{\itemindent}{-2em}%%'
-      \setlength{\leftmargin}{2em}%%'
-      \setlength{\itemsep}{0pt}%%'
-      \setlength{\parsep}{\parskip}%%'
-      \setlength{\topsep}{\parskip}%%'
+      \setlength{\itemindent}{-2em}%
+      \setlength{\leftmargin}{2em}%
+      \setlength{\itemsep}{0pt}%
+      \setlength{\parsep}{\parskip}%
+      \setlength{\topsep}{\parskip}%
     }%
-    \setlength{\parindent}{-2em}%%
-  \item[]
-  }
-  {\end{list}
-}
+    \setlength{\parindent}{-2em}%
+  \item[]%
+  }{\end{list}}
