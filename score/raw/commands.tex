@@ -62,11 +62,11 @@
 \setlength{\myboxspace}{0.4\baselineskip}
 \ifthenelse{\equal{\speaker}{a}}{\setlength{\myboxspace}{0.2\baselineskip}}{}
 
-% Increase the line spacing for performers
-\ifthenelse{\equal{\speaker}{a}}{}{\renewcommand{\baselinestretch}{1.2}}
-
 % Use a newpage between sections for performers, but not for the audience (to save space in the booklet score).
 \newcommand{\newpageforperformers}{\ifthenelse{\equal{\speaker}{a}}{}{\newpage}}
+
+% Increase the line spacing for performers
+\ifthenelse{\equal{\speaker}{a}}{}{\renewcommand{\baselinestretch}{1.2}}
 
 %%
 %% Commands
