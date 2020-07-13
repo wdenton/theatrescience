@@ -5,6 +5,20 @@ description: Williamson and Denton investigate.
 ---
 # theatre science
 
+<hr>
+
+## CATR Theatre Science (May 2020)
+
+[Williamson](https://www.ashleywilliamson.org) and [Denton](https://www.miskatonic.org/) had looked forward to being at [Partition/Ensemble 2020](https://partitionensemble2020.com/) in May and workshopping *Theatre Science* with the [Canadian Association of Theatre Researchers](https://catracrt.ca/) and the [Société québécoise d'études théâtrales](https://sqet.org/).  For the reduced, relaxed, asynchronous virtual conference that has replaced the Montreal meeting, we offer:
+
+* [CATR Theatre Science](files/CATR-Theatre-Science.mp3), an immersive audio experience (39 minute MP3)
+
+{% include image.html url = "/images/zoom-recording-screenshot-square.png" caption = "Cover image of CATR Theatre Science: Williamson and Denton with headphones" %}
+
+<hr>
+
+## Experiment One (February 2020)
+
 {% include image.html url = "/images/poster-202002.png" caption = "Poster for first two performances." %}
 
 Theatre Science is an investigation by [Ashley Williamson](http://www.ashleywilliamson.org/) and [William Denton](https://www.miskatonic.org/).  Source code: <https://github.com/wdenton/theatrescience>.
@@ -13,9 +27,9 @@ Open beta test:  20 February 2020.  Experiment One:  27 February 2020.  At the [
 
 {% include image.html url = "/images/simulation-02-lamps.jpg" caption = "Photo taken at Simulation 02." %}
 
+<hr>
 
-
-**Limitation.  Algorithm.  Method.  Process.  Score.**
+## Limitation.  Algorithm.  Method.  Process.  Score.
 
 <div id="footer">
 
