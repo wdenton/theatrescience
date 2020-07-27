@@ -7,7 +7,7 @@ description: Williamson and Denton investigate.
 
 <hr>
 
-## CATR Theatre Science (May 2020)
+## CATR Theatre Science (July 2020)
 
 [Williamson](https://www.ashleywilliamson.org) and [Denton](https://www.miskatonic.org/) looked forward to [Partition/Ensemble 2020](https://partitionensemble2020.com/) in May and workshopping *Theatre Science* with the [Canadian Association of Theatre Researchers](https://catracrt.ca/) and the [Société québécoise d'études théâtrales](https://sqet.org/).  For the reduced, relaxed, asynchronous virtual conference that has replaced the Montreal meeting, we offer:
 
